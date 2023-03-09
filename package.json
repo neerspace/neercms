@@ -1,0 +1,27 @@
+{
+  "name": "@neerspace/angular-admin-core",
+  "version": "1.0.0",
+  "description": "The core components to create Angular Admin Panel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/NeerSpace/angular-admin-core.git"
+  },
+  "keywords": [
+    "Neerspace",
+    "Angular",
+    "CMS",
+    "Admin",
+    "Panel",
+    "Components"
+  ],
+  "author": "jurilents",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeerSpace/angular-admin-core/issues"
+  },
+  "homepage": "https://github.com/NeerSpace/angular-admin-core#readme"
+}
