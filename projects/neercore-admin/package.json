@@ -1,0 +1,41 @@
+{
+  "name": "@neerspace/ngx-admin",
+  "version": "0.0.1",
+  "description": "The core components to create Angular Admin Panel",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/NeerSpace/angular-admin-core.git"
+  },
+  "keywords": [
+    "Neerspace",
+    "Angular",
+    "CMS",
+    "Admin",
+    "Panel",
+    "Components"
+  ],
+  "author": "jurilents",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeerSpace/angular-admin-core/issues"
+  },
+  "homepage": "https://github.com/NeerSpace/angular-admin-core#readme",
+  "peerDependencies": {
+    "@angular/animations": "~14.2.12",
+    "@angular/cdk": "~14.2.7",
+    "@angular/common": "~14.2.12",
+    "@angular/compiler": "~14.2.12",
+    "@angular/core": "~14.2.12",
+    "@angular/forms": "~14.2.12",
+    "@angular/platform-browser": "~14.2.12",
+    "@angular/platform-browser-dynamic": "~14.2.12",
+    "@angular/platform-server": "~14.2.12",
+    "@angular/router": "~14.2.12"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

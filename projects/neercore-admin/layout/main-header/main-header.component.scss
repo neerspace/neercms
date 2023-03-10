@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: .5rem 0 1.5rem 1.5rem;
+
+  &.short-mode {
+    max-width: 720px;
+  }
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: row;
+}
+
+p[dimmed] {
+  display: inline;
+  color: var(--c-text-dim);
+}

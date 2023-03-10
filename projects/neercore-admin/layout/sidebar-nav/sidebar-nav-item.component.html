@@ -1,0 +1,62 @@
+<ng-container *ngIf="item.children; else navLinkItem">
+  <div class="nav-group">
+
+    <ng-container *ngIf="!inverse">
+      <ng-container *ngTemplateOutlet="accordionButton"></ng-container>
+    </ng-container>
+
+    <div
+      id="navgrp-{{getKey(item.text)}}"
+      class="accordion-flush"
+      [class.collapse]="item.collapseByDefault"
+      [class.show]="!item.collapseByDefault"
+      attr.aria-labelledby="navgrp-{{getKey(item.text)}}">
+      <div class="accordion-body">
+        <ng-container *ngFor="let subItem of item.children">
+          <a [routerLink]="subItem.routerLink"
+             [queryParams]="subItem.routerParams"
+             [state]="subItem.stateData"
+             routerLinkActive="active"
+             class="nav-item nav-link">
+            <i *ngIf="subItem.icon" class="las {{subItem.icon}}"></i>
+            {{subItem.text}}
+          </a>
+        </ng-container>
+      </div>
+    </div>
+
+    <ng-container *ngIf="inverse">
+      <ng-container *ngTemplateOutlet="accordionButton"></ng-container>
+    </ng-container>
+
+  </div>
+</ng-container>
+
+<ng-template #navLinkItem>
+  <a [routerLink]="item.routerLink"
+     [queryParams]="item.routerParams"
+     [state]="item.stateData"
+     routerLinkActive="active"
+     class="nav-item nav-link">
+    <i *ngIf="!!item.icon" class="las {{item.icon}}"></i>
+    {{item.text}}
+  </a>
+</ng-template>
+
+<ng-template #accordionButton>
+  <button
+    type="button"
+    class="accordion-button nav-item nav-group-header collapsed"
+    aria-expanded="false"
+    data-bs-toggle="collapse"
+    [class.inverse]="inverse"
+    attr.data-bs-target="#navgrp-{{getKey(item.text)}}"
+    attr.aria-controls="navgrp-{{getKey(item.text)}}">
+    <i *ngIf="!!item.icon" class="las {{item.icon}}"></i>
+    <img *ngIf="item.image"
+         [src]="item.image"
+         alt=""
+         class="nav-image"/>
+    {{item.text}}
+  </button>
+</ng-template>

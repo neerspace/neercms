@@ -1,0 +1,47 @@
+<div class="row mb-3 form-grp">
+  <label *ngIf="label"
+         [for]="controlName"
+         class="col-sm-4 col-form-label">
+    {{label}}
+    <sup *ngIf="required"
+         class="required-mark">*
+    </sup>
+  </label>
+  <div class="col-sm-8">
+    <input #input
+           [formControl]="formControl"
+           [id]="controlName"
+           [type]="type"
+           class="form-control"
+           [class.right-padding]="isTrue(allowCopy)"
+           [attr.maxlength]="maxLength"
+           [autocomplete]="isTrue(autocomplete) ? 'on' : 'off'"
+           (input)="onChange($event)"
+           (focusin)="focused = true"
+           (focusout)="focused = false" />
+    <button *ngIf="isTrue(allowCopy)"
+            class="input-mark"
+            (click)="copyPaste.copyToClipboard(input.value)">
+      <i class="las la-copy"></i>
+    </button>
+  </div>
+
+  <app-field-message *ngIf="maxLength > 0"
+                     size="small"
+                     [text]="maxLength - input.value.length"
+                     [show]="focused"
+                     [warn]="input.value.length > maxLength * 0.8"
+                     [error]="input.value.length >= maxLength"></app-field-message>
+
+  <app-field-message [text]="errors.required"
+                     [show]="!focused && formControl.touched && formControl.hasError('required')"
+                     [error]="true"></app-field-message>
+
+  <app-field-message [text]="errors.invalidEmail"
+                     [show]="!focused && formControl.touched && formControl.hasError('email')"
+                     [error]="true"></app-field-message>
+
+  <app-field-message [text]="formControl.getError('api-error')"
+                     [show]="formControl.hasError('api-error')"
+                     [error]="true"></app-field-message>
+</div>

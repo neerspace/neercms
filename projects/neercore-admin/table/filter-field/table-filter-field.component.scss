@@ -1,0 +1,19 @@
+.filter-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin: .1rem .05rem;
+}
+
+.filter-select {
+  width: 15%;
+  min-width: 50px;
+  padding: .33rem .2rem;
+  text-align: center;
+}
+
+.filter-sep {
+  font-weight: normal;
+  padding: .4rem .33rem 0;
+}

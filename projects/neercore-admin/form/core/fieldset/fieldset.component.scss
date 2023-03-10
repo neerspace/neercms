@@ -1,0 +1,15 @@
+:host {
+  display: block;
+
+  &[size="small"] {
+    max-width: 520px;
+  }
+
+  &[size="medium"] {
+    max-width: 640px;
+  }
+
+  &[size="large"] {
+    max-width: 100%;
+  }
+}

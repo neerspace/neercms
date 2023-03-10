@@ -1,0 +1,12 @@
+<button class="btn btn-sm btn-outline-dark dropdown-button"
+        [class.disabled]="disabled === true || disabled === 'true'"
+        [id]="key"
+        data-bs-toggle="dropdown">
+  <i *ngIf="!!buttonIcon"
+     class="las {{buttonIcon}} dropdown-button-icon"></i>
+  <strong class="dropdown-button-text">{{buttonText}}</strong>
+</button>
+<ul class="dropdown-menu dropdown-menu-dark text-small"
+    [attr.aria-labelledby]="key">
+  <ng-content></ng-content>
+</ul>

@@ -1,0 +1,27 @@
+<div class="row mb-3 form-grp">
+  <label *ngIf="label" [for]="controlName" class="col-sm-4 col-form-label">
+    {{label}}<sup *ngIf="required" class="required-mark">*</sup>
+  </label>
+  <div class="col-sm-8">
+    <input #input
+           [formControl]="formControl"
+           [id]="controlName"
+           class="form-control"
+           [class.right-padding]="isTrue(allowCopy)"
+           [mask]="mask"
+           [allowNegativeNumbers]="minValue < 0 || maxValue < 0"
+           (input)="onChange($event)"
+           (keyup)="onKeyUp($event)"
+           (focusin)="focused = true"
+           (focusout)="focused = false"/>
+    <button *ngIf="isTrue(allowCopy)" class="input-mark" (click)="copyPaste.copyToClipboard(input.value)">
+      <i class="las la-copy"></i>
+    </button>
+  </div>
+
+  <app-field-message
+    [text]="errors.required"
+    [show]="!focused && formControl.touched && formControl.hasError('required')"
+    [error]="true">
+  </app-field-message>
+</div>

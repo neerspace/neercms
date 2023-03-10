@@ -1,0 +1,11 @@
+:host {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-right: 1.25rem;
+
+  > * {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  position: absolute;
+  top: -.1rem;
+  left: 98.5%;
+  z-index: -1;
+
+  &.small {
+    width: auto;
+    min-width: 4rem;
+  }
+
+  &.medium {
+    width: auto;
+    min-width: 10rem;
+  }
+
+  &.show {
+    z-index: 10;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+  }
+
+  .tooltip-arrow {
+    position: absolute;
+    top: -.15rem;
+    left: -1px;
+    transform: translate(0px, .95rem);
+
+    &:before {
+      border-width: .5rem;
+      border-right-color: var(--c-bg-1);
+    }
+  }
+
+  .tooltip-inner {
+    padding: .2rem .5rem;
+    background-color: var(--c-bg-1);
+    border-right: .33rem solid var(--c-success);
+  }
+
+  &.warn .tooltip-inner {
+    border-color: var(--c-warning);
+  }
+
+  &.danger .tooltip-inner {
+    border-color: var(--c-danger);
+  }
+}

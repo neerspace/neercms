@@ -1,0 +1,25 @@
+<nav *ngIf="lastPage > 1">
+  <ul class="pagination pagination-sm">
+    <li *ngIf="items.length > 2 && items[0] !== 1" class="page-item">
+      <a class="page-link" [class.disabled]="page === 1" (click)="setPage(1)">1</a>
+    </li>
+
+    <li *ngIf="items.length > 2 && items[0] !== 1" class="page-item">
+      <span class="page-link disabled pagination-sep">...</span>
+    </li>
+
+    <li class="page-item" *ngFor="let item of items">
+      <span class="page-link" [class.active]="item === page" (click)="setPage(item)">
+        {{item}}
+      </span>
+    </li>
+
+    <li *ngIf="items.length && items[items.length - 1] !== lastPage" class="page-item">
+      <span class="page-link disabled pagination-sep">...</span>
+    </li>
+
+    <li *ngIf="items.length && items[items.length - 1] !== lastPage" class="page-item">
+      <a class="page-link" [class.disabled]="page === lastPage" (click)="setPage(lastPage)">{{lastPage}}</a>
+    </li>
+  </ul>
+</nav>

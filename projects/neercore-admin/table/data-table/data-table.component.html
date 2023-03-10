@@ -1,0 +1,129 @@
+<!--<pre>{{filtersForm.value | json}}</pre>-->
+
+<ng-content></ng-content>
+
+<table id="users-table"
+       class="table table-hover">
+  <thead>
+  <tr *ngIf="columns && columns.length">
+    <th *ngFor="let col of $any(columns)"
+        [class.hidden]="col.hidden">
+      <button *ngIf="col.sortable; else notSortable"
+              class="btn col-header"
+              [class.sortable]="!!col.sortable"
+              (click)="changeSorts(col.key, $event)">
+        {{col.title}}
+        <i class="sort-icon las"
+           [class.la-arrows-alt-v]="sorts !== col.key"
+           [class.la-arrow-down]="sorts === col.key && sortsAsc"
+           [class.asc]="sorts === col.key && sortsAsc"
+           [class.la-arrow-up]="sorts === col.key && !sortsAsc"
+           [class.desc]="sorts === col.key && !sortsAsc"></i>
+      </button>
+      <ng-template #notSortable>
+        <div class="col-header"
+             [class.col-fullsized]="!!col.actions">
+          {{col.title}}
+        </div>
+      </ng-template>
+    </th>
+    <!--<th *ngIf="buttons.length > 0"-->
+    <!--    class="table-buttons">-->
+    <!--      <button class=" filters-button btn btn-icon btn-outline-danger" title="Reset filters">-->
+    <!--        <i class="las la-filter"></i>-->
+    <!--      </button>-->
+    <!--</th>-->
+  </tr>
+  <tr>
+    <th *ngFor="let col of $any(columns)"
+        [formGroup]="filtersForm"
+        [class.hidden]="col.hidden">
+      <app-table-filter-field *ngIf="col.key && col.filter && col.filter !== 'none'"
+                              [column]="col"></app-table-filter-field>
+    </th>
+    <!--<th *ngIf="buttons.length > 0"-->
+    <!--    class="table-buttons">-->
+    <!--  <button class="filters-button btn btn-icon btn-outline-danger"-->
+    <!--          title="Reset filters"-->
+    <!--          (click)="setFiltersToDefault()">-->
+    <!--    <i class="las la-times-circle"></i>-->
+    <!--  </button>-->
+    <!--</th>-->
+  </tr>
+  </thead>
+  <tbody>
+  <!--<tr *ngFor="let item of data">-->
+  <!--  <td *ngFor="let col of $any(columns)"-->
+  <!--      [class.table-buttons]="!!col.actions"-->
+  <!--      [class.table-active]="col.key === sorts"-->
+  <!--      [class.hidden]="col.hidden">-->
+  <!--    <ng-container *ngIf="!col.actions; else actionButtonsColumn">-->
+  <!--      <div [innerHTML]="col.formatter ? col.formatter(item[col.key], item) : item[col.key]"></div>-->
+  <!--    </ng-container>-->
+  <!--    <ng-template #actionButtonsColumn>-->
+  <!--      <button *ngFor="let btn of col.actions"-->
+  <!--              class="btn {{btn.button.class}}"-->
+  <!--              (click)="btn.onClick(item)">-->
+  <!--      <span *ngIf="btn.button.text"-->
+  <!--            class="text">{{btn.button.text}}</span>-->
+  <!--        <i *ngIf="btn.button.icon"-->
+  <!--           class="las {{btn.button.icon}}"></i>-->
+  <!--      </button>-->
+  <!--    </ng-template>-->
+  <!--  </td>-->
+  <!--</tr>-->
+  <tr *ngFor="let item of data">
+    <td *ngFor="let col of $any(columns)"
+        [class.col-fullsized]="col.style === 1 || !!col.actions"
+        [class.table-active]="col.key === sorts"
+        [class.hidden]="col.hidden">
+      <ng-container *ngIf="col.template; else formatterColumn">
+        <ng-container [ngTemplateOutlet]="getCustomColumnByName(col.template).templateRef"
+                      [ngTemplateOutletContext]="{value: item[col.key], object: item}"></ng-container>
+      </ng-container>
+      <ng-template #formatterColumn>
+        <ng-container *ngIf="!col.actions; else actionButtonsColumn">
+          <div [innerHTML]="col.formatter ? col.formatter(item[col.key], item) : item[col.key]"></div>
+        </ng-container>
+        <ng-template #actionButtonsColumn>
+          <button *ngFor="let btn of col.actions"
+                  class="btn {{btn.button.class}}"
+                  (click)="btn.onClick(item)">
+            <span *ngIf="btn.button.text"
+                  class="text">{{btn.button.text}}</span>
+            <i *ngIf="btn.button.icon"
+               class="las {{btn.button.icon}}"></i>
+          </button>
+        </ng-template>
+      </ng-template>
+    </td>
+  </tr>
+  <tr *ngIf="data && data.length === 0">
+    <td class="no-data"
+        [attr.colspan]="columns.length">
+      No data matching 😔
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="table-footer"
+     [class.hidden]="!data || data.length === 0">
+
+  <app-column-chooser *ngIf="columnChooser"
+                      [sequenceName]="columnChooserSequence!"
+                      [(sequence)]="columnSequence"
+                      [(columns)]="columns"></app-column-chooser>
+
+  <app-page-size *ngIf="data && total > pageSize"
+                 [pageSize]="pageSize"
+                 (pageSizeChange)="changePageSize($event)"></app-page-size>
+
+  <div class="page-indicator">{{pageIndicatorText}}</div>
+
+  <app-pagination #pagination
+                  [page]="page"
+                  [pageSize]="pageSize"
+                  [total]="total"
+                  (pageChange)="changePage($event)"></app-pagination>
+</div>

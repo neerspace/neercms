@@ -1,0 +1,22 @@
+<div class="row mb-3 form-grp">
+  <label [for]="controlName"
+         class="col-sm-4 col-form-label">
+    {{label}}
+    <sup *ngIf="required"
+         class="required-mark"> *
+    </sup>
+  </label>
+  <div class="col-sm-8"
+       [class.focused]="focused">
+    <input app-date-picker
+           [id]="controlName"
+           type="text"
+           class="form-control"
+           [date]="formControl"
+           [dateTo]="formControlEnd"
+           [datePickerMode]="type"
+           [disabled]="disabled"
+           (focusin)="focused = true"
+           (focusout)="focused = false" />
+  </div>
+</div>

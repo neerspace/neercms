@@ -1,0 +1,24 @@
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{info.title}}</h5>
+    </div>
+    <div class="modal-body">
+      <p>{{info.text}}</p>
+      <textarea *ngIf="info.showTextArea"
+                class="form-control medium"
+                (input)="text = $any($event.target).value"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button"
+              class="btn btn-outline-{{info.closeVariant}}"
+              data-bs-dismiss="modal"
+              (click)="close()">{{info.closeText}}</button>
+      <button type="button"
+              class="btn btn-{{info.confirmVariant}}"
+              (click)="confirm()">{{info.confirmText}}</button>
+    </div>
+  </div>
+</div>
+<div class="backdrop"
+     (click)="close()"></div>
