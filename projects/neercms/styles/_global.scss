@@ -1,0 +1,99 @@
+@import 'mixins';
+
+app-main-header .btn {
+  margin-left: .5rem;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: var(--c-text);
+  -webkit-box-shadow: none;
+  transition: background-color 60000s 0s, color 60000s 0s;
+
+  &:hover {
+    -webkit-text-fill-color: var(--c-text);
+    -webkit-box-shadow: none;
+  }
+
+  &:focus {
+    -webkit-text-fill-color: var(--c-text);
+    -webkit-box-shadow: none;
+  }
+}
+
+.check {
+  margin-left: 20%;
+  border-radius: 50%;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: .4rem;
+    left: -1rem;
+    width: .6rem;
+    height: .6rem;
+    border: 1px solid var(--c-bg-5);
+  }
+
+  &.check-true:before {
+    background-color: var(--c-success);
+  }
+
+  &.check-false:before {
+    background-color: var(--c-danger);
+  }
+}
+
+.counter {
+  color: var(--c-text-dim);
+
+  &.counter-positive {
+    color: var(--c-success);
+  }
+
+  &.counter-negative {
+    color: var(--c-danger);
+  }
+}
+
+.toast {
+  .icon {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+  }
+
+  &[data-color=success] {
+    background-color: var(--c-success);
+  }
+
+  &[data-color=danger] {
+    background-color: var(--c-danger);
+  }
+
+  &[data-color=info] {
+    background-color: var(--c-accent);
+  }
+}
+
+.disable-browser-security {
+  @include disable-browser-security;
+}
+
+.text-dimmed {
+  color: var(--c-text-dim);
+}
+
+.split-area-content {
+  overflow: hidden !important;
+}
+
+textarea {
+  height: 8.25rem;
+  min-height: 3.75rem;
+  max-height: 20.25rem;
+}

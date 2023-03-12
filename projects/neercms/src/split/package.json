@@ -1,0 +1,10 @@
+{
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public-api.ts",
+      "umdModuleIds": {
+        "angular-split": "angular-split"
+      }
+    }
+  }
+}

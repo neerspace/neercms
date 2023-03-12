@@ -1,0 +1,13 @@
+@mixin disable-selection() {
+  --webkit-touch-callout: none;
+  --webkit-user-select: none;
+  --moz-user-select: none;
+  --ms-user-select: none;
+  user-select: none;
+}
+
+@mixin disable-browser-security() {
+  --webkit-text-security: disc;
+  --moz-text-security: disc;
+  --text-security: disc;
+}

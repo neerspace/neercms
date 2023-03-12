@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "neercore-admin": {
+    "neercms": {
       "projectType": "library",
-      "root": "projects/neercore-admin",
+      "root": "projects/neercms",
       "sourceRoot": "projects/neercore-admin/src",
       "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/neercore-admin/ng-package.json"
+            "project": "projects/neercms/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/neercore-admin/tsconfig.lib.prod.json"
+              "tsConfig": "projects/neercms/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/neercore-admin/tsconfig.lib.json"
+              "tsConfig": "projects/neercms/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"

@@ -12,8 +12,37 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "neercore-admin": [
-        "dist/neercore-admin"
+      "neercms": [
+        "dist/neercms"
+      ],
+      "neercms/core/*": [
+        "dist/neercms/core/*",
+        "dist/neercms/core"
+      ],
+      "neercms/form/*": [
+        "dist/neercms/form/*",
+        "dist/neercms/form"
+      ],
+      "neercms/layout/*": [
+        "dist/neercms/layout/*",
+        "dist/neercms/layout"
+      ],
+      "neercms/services/*": [
+        "dist/neercms/services/*",
+        "dist/neercms/services"
+      ],
+      "neercms/shared/*": [
+        "dist/neercms/shared/*",
+        "dist/neercms/shared"
+      ],
+      "neercms/split/*": [
+        "dist/neercms/split/*",
+        "dist/neercms/split"
+      ],
+      "neercms/table/*": [
+        "dist/neercms/table/*",
+        "dist/neercms/table/core/*",
+        "dist/neercms/table"
       ]
     },
     "declaration": false,

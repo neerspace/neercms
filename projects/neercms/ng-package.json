@@ -1,0 +1,21 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/neercms",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "angular-split",
+    "luxon",
+    "ngx-mask",
+    "flatpickr",
+    "ng2-flatpickr",
+    "vanillajs-datepicker",
+    "@types/luxon",
+    "@types/vanillajs-datepicker"
+  ],
+  "assets": [
+    "./styles/*.*",
+    "./assets/**/*.*"
+  ]
+}

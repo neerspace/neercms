@@ -1,0 +1,13 @@
+{
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public-api.ts",
+      "umdModuleIds": {
+        "ngx-mask": "ngx-mask",
+        "flatpickr": "flatpickr",
+        "ng2-flatpickr": "ng2-flatpickr",
+        "vanillajs-datepicker": "vanillajs-datepicker"
+      }
+    }
+  }
+}
