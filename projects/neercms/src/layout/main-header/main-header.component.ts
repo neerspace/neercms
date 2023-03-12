@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input } from '@angular/core';
-import { BoolInput } from '../../shared/types';
+import { BoolInput } from '../../shared/types/common';
 
 @Component({
   selector: 'app-main-header',

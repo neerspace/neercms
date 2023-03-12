@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { randomSadEmoji } from '../../../shared/utilities';
+import { randomSadEmoji } from '../../../shared/utilities/common';
 
 @Component({
   selector: 'app-not-found',

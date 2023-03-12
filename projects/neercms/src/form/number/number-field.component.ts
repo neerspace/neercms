@@ -1,7 +1,7 @@
 import { Component, Injector, Input } from '@angular/core';
 import { NumberInputProcessorService } from '../../services';
 import { FieldBaseComponent } from '../field-base.component';
-import { NumberPattern } from '../types';
+import { NumberPattern } from '../types/common';
 
 @Component({
   selector: 'app-number-field',

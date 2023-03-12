@@ -1,6 +1,6 @@
 import { Component, Injector, Input } from '@angular/core';
 import { FieldBaseComponent } from '../field-base.component';
-import { Size } from '../types';
+import { Size } from '../types/common';
 
 @Component({
   selector: 'app-text-area-field',

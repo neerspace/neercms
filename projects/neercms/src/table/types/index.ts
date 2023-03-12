@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 import { Observable } from 'rxjs';
-import { NumberPattern } from '../../form/types';
+import { NumberPattern } from '../../form/types/common';
 
 export class DataTableError extends Error {
   constructor(message: string) {

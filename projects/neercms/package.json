@@ -37,7 +37,7 @@
     "@angular/platform-browser-dynamic": "~14.2.12",
     "@angular/platform-server": "~14.2.12",
     "@angular/router": "~14.2.12",
-    "luxon": "^3.2.1"
+    "luxon": "~3.2.1"
   },
   "dependencies": {
     "angular-split": "^14.1.0",

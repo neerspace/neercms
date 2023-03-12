@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostBinding, Input } from '@angular/core';
-import { Size } from '../../types';
+import { Size } from '../../types/common';
 
 @Component({
   selector: 'app-field-message',

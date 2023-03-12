@@ -12,11 +12,10 @@ export * from './layout/public-api';
 export * from './layout/types/public-api';
 
 export * from './services/public-api';
-export * from './services/abstractions/public-api';
 export * from './services/storage/public-api';
 export * from './services/viewport/public-api';
 
-export * from './shared/error/public-api';
+export * from './shared/errors/public-api';
 export * from './shared/types/public-api';
 export * from './shared/utilities/public-api';
 

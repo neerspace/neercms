@@ -8,7 +8,7 @@ import {
   SimpleChange,
 } from '@angular/core';
 import { FieldBaseComponent, FormBaseChanges } from '../field-base.component';
-import { ISelectOption } from '../types';
+import { ISelectOption } from '../types/common';
 
 type SelectFieldChanges = FormBaseChanges & { options: SimpleChange };
 

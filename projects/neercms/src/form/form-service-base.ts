@@ -1,8 +1,8 @@
 import { Injector } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormReady, FormReadyWrapper } from '../../form/types';
-import { ModalsService, ToasterService } from '../viewport';
+import { ModalsService, ToasterService } from '../services/viewport';
+import { FormReady, FormReadyWrapper } from './types/common';
 
 export abstract class FormServiceBase {
   public readonly form: FormGroup;

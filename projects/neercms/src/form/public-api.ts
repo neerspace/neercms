@@ -15,7 +15,8 @@ export * from './text-area/text-area-field.component';
 export * from './text-area/text-area-input.component';
 export * from './text-input-conditional/text-input-conditional.component';
 
+export * from './error-messages';
 export * from './field-base.component';
 export * from './form-components.module';
+export * from './form-service-base';
 export * from './input-base.component';
-export * from './types';

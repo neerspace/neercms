@@ -1,4 +1,4 @@
-import { color } from '../../shared/types';
+import { color } from '../../shared/types/common';
 
 export type InputType =
   | 'text'

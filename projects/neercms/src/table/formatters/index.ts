@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon';
-import { getDomain } from '../../shared/utilities';
+import { getDomain } from '../../shared/utilities/common';
 
 export const maxStringLength = 28;
 export const emptyStringPlaceholder = '<span class="text-dimmed">—</span>';

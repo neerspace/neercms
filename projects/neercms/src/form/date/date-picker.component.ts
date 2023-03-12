@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import flatpickr from 'flatpickr';
 import { DateTime } from 'luxon';
-import { DateTimeMode, PickrMode } from '../types';
+import { DateTimeMode, PickrMode } from '../types/common';
 
 const minDate = new Date('1900-01-01');
 const maxDate = new Date('2036-01-01');

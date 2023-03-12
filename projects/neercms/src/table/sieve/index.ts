@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon';
-import { IDictionary } from '../../shared/types';
+import { IDictionary } from '../../shared/types/common';
 
 export interface IFilterFieldInfo {
   key: string;

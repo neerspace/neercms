@@ -6,4 +6,3 @@ export * from './tabs/tab/tab.component';
 export * from './tabs/tabs.component';
 export * from './toast/toast-area.component';
 export * from './core-components.module';
-export * from './types';

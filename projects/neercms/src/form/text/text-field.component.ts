@@ -1,8 +1,8 @@
 import { Component, Injector, Input } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { BoolInput } from '../../shared/types';
+import { BoolInput } from '../../shared/types/common';
 import { FieldBaseComponent } from '../field-base.component';
-import { InputType } from '../types';
+import { InputType } from '../types/common';
 
 @Component({
   selector: 'app-text-field',

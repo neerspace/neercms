@@ -9,9 +9,9 @@ import {
 } from '@angular/core';
 import { FormControl, FormGroupDirective, Validators } from '@angular/forms';
 import { CopyPasteService } from '../services';
-import { BoolInput } from '../shared/types';
+import { BoolInput } from '../shared/types/common';
 import { errorMessages } from './error-messages';
-import { FormError } from './types';
+import { FormError } from './types/common';
 
 export type FormBaseChanges = SimpleChanges & { disabled: SimpleChange };
 

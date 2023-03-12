@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input } from '@angular/core';
-import { FormReady, FormReadyWrapper } from '../types';
+import { FormReady, FormReadyWrapper } from '../types/common';
 
 @Component({
   selector: 'form[app-form-layout]',

@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { FormGroupDirective } from '@angular/forms';
 import { InputBaseComponent } from '../input-base.component';
-import { Size } from '../types';
+import { Size } from '../types/common';
 
 @Component({
   selector: 'app-text-area-input',

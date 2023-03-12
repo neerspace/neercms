@@ -1,4 +1,4 @@
-import { IDictionary } from '../../shared/types';
+import { IDictionary } from '../../shared/types/common';
 
 export interface IMenuItem {
   text: string;

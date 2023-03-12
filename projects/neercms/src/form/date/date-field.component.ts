@@ -2,7 +2,7 @@ import { Component, Injector, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DateTime } from 'luxon';
 import { FieldBaseComponent } from '../field-base.component';
-import { DateTimeMode } from '../types';
+import { DateTimeMode } from '../types/common';
 
 @Component({
   selector: 'app-date-field',
