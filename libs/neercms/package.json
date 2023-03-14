@@ -1,6 +1,7 @@
 {
   "name": "neercms",
   "version": "0.0.1",
+  "description": "The core components to create Angular Admin Panel",
   "peerDependencies": {
     "@angular/animations": "^14.2.12",
     "@angular/cdk": "^14.2.7",
@@ -25,5 +26,26 @@
   "devDependencies": {
     "@types/luxon": "^3.2.0",
     "@types/vanillajs-datepicker": "^1.2.1"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neerspace/neercms-angular.git"
+  },
+  "keywords": [
+    "NeerCore",
+    "neerspace",
+    "Angular",
+    "Components",
+    "CMS",
+    "Admin"
+  ],
+  "author": "jurilents",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neerspace/neercms-angular/issues"
+  },
+  "homepage": "https://github.com/neerspace/neercms-angular#readme"
 }
