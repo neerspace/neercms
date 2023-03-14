@@ -24,7 +24,11 @@ export abstract class FormServiceBase {
     this.form = this.formBuilder.group(controls) as any;
   }
 
-  init(isCreating: boolean): void {}
+  init(isCreating: boolean): void {
+    if (isCreating) {
+      this.setReady('ready');
+    }
+  }
 
   get ready(): FormReadyWrapper {
     if (!this.readyWrap) {
