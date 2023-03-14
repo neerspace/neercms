@@ -1,6 +1,7 @@
 {
   "name": "neercmslib",
   "version": "0.0.0",
+  "private": false,
   "scripts": {
     "ng": "ng",
     "pkg-install": "npm install",
@@ -9,9 +10,9 @@
     "app:watch": "ng build --watch --configuration development",
     "neercms:build": "ng build neercms",
     "neercms:watch": "ng build neercms --watch --configuration development",
-    "neercms:publish": "cd libs/neercms; npm version patch; npm publish"
+    "neercms:publish": "cd libs/neercms; npm version patch; npm publish",
+    "neercms:pure-publish": "cd libs/neercms; npm publish"
   },
-  "private": false,
   "dependencies": {
     "@angular/animations": "^14.2.12",
     "@angular/cdk": "~14.2.7",
