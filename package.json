@@ -10,7 +10,7 @@
     "neercms:build": "ng build neercms",
     "neercms:watch": "ng build neercms --watch --configuration development"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^14.2.12",
     "@angular/cdk": "~14.2.7",
