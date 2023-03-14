@@ -3,6 +3,7 @@ import { IDictionary } from 'neercms/shared/types';
 export interface IMenuItem {
   text: string;
   icon?: string;
+  iconKind?: string;
   image?: string;
   collapseByDefault?: boolean;
   routerLink?: string;

@@ -18,7 +18,7 @@
              [state]="subItem.stateData"
              routerLinkActive="active"
              class="nav-item nav-link">
-            <i *ngIf="subItem.icon" class="las {{subItem.icon}}"></i>
+            <i *ngIf="subItem.icon" class="{{subItem.iconKind ?? 'las'}} {{subItem.icon}}"></i>
             {{subItem.text}}
           </a>
         </ng-container>
@@ -38,7 +38,7 @@
      [state]="item.stateData"
      routerLinkActive="active"
      class="nav-item nav-link">
-    <i *ngIf="!!item.icon" class="las {{item.icon}}"></i>
+    <i *ngIf="!!item.icon" class="{{item.iconKind ?? 'las'}} {{item.icon}}"></i>
     {{item.text}}
   </a>
 </ng-template>
@@ -52,7 +52,7 @@
     [class.inverse]="inverse"
     attr.data-bs-target="#navgrp-{{getKey(item.text)}}"
     attr.aria-controls="navgrp-{{getKey(item.text)}}">
-    <i *ngIf="!!item.icon" class="las {{item.icon}}"></i>
+    <i *ngIf="!!item.icon" class="{{item.iconKind ?? 'las'}} {{item.icon}}"></i>
     <img *ngIf="item.image"
          [src]="item.image"
          alt=""
