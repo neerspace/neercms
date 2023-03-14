@@ -1,0 +1,21 @@
+<ul class="nav nav-tabs">
+  <li *ngFor="let tab of tabs"
+      (click)="selectTab(tab)"
+      [class.active]="tab.active"
+      class="tab">
+    <button class="btn btn-outline-secondary">{{tab.title}}</button>
+  </li>
+  <!-- dynamic tabs -->
+  <li *ngFor="let tab of dynamicTabs"
+      (click)="selectTab(tab)"
+      [class.active]="tab.active"
+      class="tab">
+    <button class="btn btn-outline-secondary">{{tab.title}}
+      <i *ngIf="tab.isCloseable"
+         (click)="closeTab(tab)"
+         class="las la-times"></i>
+    </button>
+  </li>
+</ul>
+<ng-content></ng-content>
+<ng-template #container></ng-template>

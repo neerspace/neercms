@@ -1,0 +1,127 @@
+@import 'dark';
+
+$escaped-characters: (
+    ("<", "%3c"),
+    (">", "%3e"),
+    ("#", "%23"),
+    ("(", "%28"),
+    (")", "%29"),
+);
+
+@import 'bootstrap/scss/functions';
+
+// Color system
+
+// Options
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-rounded: false;
+$enable-shadows: false;
+$enable-reduced-motion: true;
+$enable-smooth-scroll: true;
+$enable-grid-classes: true;
+$enable-container-classes: true;
+$enable-rfs: true;
+$enable-validation-icons: true;
+$enable-negative-margins: false;
+
+// Prefix for :root CSS variables
+$variable-prefix: bs-;
+$prefix: $variable-prefix;
+
+// Body
+// Settings for the `<body>` element.
+$body-bg: $gray-800;
+$body-color: $gray-100;
+$body-text-align: null;
+
+// Transition base
+$transition-base: all .1s linear;
+$transition-fade: opacity .2s linear;
+
+$transition-collapse: height .15s ease;
+$transition-collapse-width: width .35s ease;
+
+// Links
+// Style anchor elements.
+$link-color: $white;
+$link-decoration: underline;
+$link-shade-percentage: 20%;
+$link-hover-color: shift-color($link-color, $link-shade-percentage);
+$link-hover-decoration: null;
+
+$stretched-link-pseudo-element: after;
+$stretched-link-z-index: 1;
+
+$component-active-color: $white;
+$component-active-bg: $primary;
+
+// Typography
+// Font, line-height, and color for body text, headings, and more.
+
+// font-variables
+$font-family-sans-serif: Ubuntu, Roboto, system-ui, -apple-system, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-family-monospace: 'Ubuntu Mono', Consolas, monospace;
+
+
+// Reset border radius
+$border-radius: 0;
+$border-radius-sm: $border-radius;
+$border-radius-lg: $border-radius;
+$border-radius-xl: $border-radius;
+$border-radius-2xl: $border-radius;
+$border-radius-pill: $border-radius;
+
+// Close button
+$btn-close-color: $light;
+$btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>");
+
+
+// Accordion
+$accordion-color: $white;
+$arrow-down-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon: $accordion-button-icon;
+$accordion-icon-width: 1.15rem;
+$accordion-border-width: 0;
+$accordion-body-padding-x: 0;
+$accordion-body-padding-y: 0;
+$accordion-button-focus-box-shadow: 0;
+
+// Pagination
+$pagination-padding-x: .55rem;
+$pagination-bg: var(--c-bg-2);
+$pagination-color: var(--c-text);
+$pagination-border-color: var(--c-bg-3);
+
+$pagination-hover-bg: var(--c-bg-3);
+$pagination-hover-color: var(--c-text);
+$pagination-hover-border-color: var(--c-bg-3);
+
+$pagination-disabled-color: var(--c-text);
+$pagination-disabled-bg: var(--c-bg-2);
+$pagination-disabled-border-color: var(--c-bg-3);
+
+$pagination-focus-bg: var(--c-bg-3);
+$pagination-focus-color: var(--c-text);
+
+$pagination-transition: color .1s ease-in-out,
+background-color .05s ease-in-out,
+border-color .1s ease-in-out;
+
+// Modal
+$modal-content-bg: var(--c-bg-2);
+$modal-content-color: var(--c-text);
+$modal-header-border-width: 3px;
+$modal-header-border-color: var(--c-bg-1);
+$modal-footer-border-width: 0;
+
+// Table
+$table-active-bg: rgba(0, 0, 0, .15);
+$table-hover-bg: var(--c-bg-1);
+
+// Form
+$input-disabled-bg: var(--c-bg-1);
+
+// Toast
+$toast-spacing: .5rem;
+$toast-font-size: 1.1rem;

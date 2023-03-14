@@ -1,0 +1,21 @@
+<div class="row mb-3 form-grp">
+<!--  <label *ngIf="label" [for]="controlName" class="col-sm-4 col-form-label">-->
+<!--    {{label}}<sup *ngIf="required" class="required-mark"> *</sup>-->
+<!--  </label>-->
+  <div class="col-sm-8">
+    <input #input
+           class="form-control"
+           [formControl]="formControl"
+           [id]="controlName"
+           [type]="type"
+           [attr.maxlength]="maxLength"
+           (input)="onChange($event)"
+           (focusin)="focused = true"
+           (focusout)="focused = false"/>
+    <div>
+      <select>
+        <option *ngFor="let op of textOperators" [value]="op[0]">{{op[1]}}</option>
+      </select>
+    </div>
+  </div>
+</div>

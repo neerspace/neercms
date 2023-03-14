@@ -1,0 +1,115 @@
+.col-fullsized {
+  padding: 0 .5rem;
+  vertical-align: middle;
+  width: 5rem;
+
+  //button:not(:first-child) {
+  //  margin-left: .25rem;
+  //}
+
+  button {
+    border: none;
+    padding: 0 .3rem;
+    color: var(--c-text);
+    font-size: 1.25rem;
+    opacity: 0;
+    white-space: nowrap;
+
+    .text {
+      vertical-align: text-bottom;
+      font-size: .9rem;
+      padding: .15rem .3rem 0;
+
+      &:not(:last-child) {
+        margin-right: .5rem;
+      }
+    }
+
+    &.neutral:hover {
+      background-color: var(--c-bg-2);
+    }
+
+    &.edit:hover, &.success:hover {
+      background-color: var(--c-success);
+    }
+
+    &.delete:hover {
+      background-color: var(--c-danger);
+    }
+  }
+
+  .filters-button {
+    display: inline-flex;
+    height: 1.75rem;
+    width: 2rem;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+
+    i {
+      margin: 0;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+button.general-button, button.flag-button {
+  position: relative;
+  opacity: 100%;
+}
+
+button.general-button {
+  background-color: var(--c-bg-3);
+
+  &:hover {
+    background-color: var(--c-bg-2);
+  }
+
+  &:not(:last-child) {
+    margin-right: .25rem;
+  }
+}
+
+button.flag-button {
+  padding: 0 .4rem;
+
+  .text {
+    margin-right: .1rem !important;
+  }
+
+  > * {
+    position: relative;
+    z-index: 10;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--c-bg-2);
+    opacity: 0%;
+    transition: opacity .1s linear;
+    z-index: 1;
+  }
+
+  &:hover:after {
+    opacity: 100%;
+    transition: opacity .1s linear;
+  }
+
+  .flag-img {
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+    vertical-align: text-top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+}

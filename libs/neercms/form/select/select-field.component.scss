@@ -1,0 +1,17 @@
+.dropdown-item {
+  height: 2.3835rem;
+  padding-top: .4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-marker {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-left: 1rem;
+  border-radius: 50%;
+}

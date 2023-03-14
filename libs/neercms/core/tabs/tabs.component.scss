@@ -1,0 +1,32 @@
+.nav-tabs {
+  display: flex;
+  gap: .25rem;
+  align-items: flex-end;
+}
+
+.tab {
+  button {
+    background-color: var(--c-bg-2);
+    padding: .5rem .5rem .6rem 1rem;
+    margin-top: .5rem;
+    color: var(--c-text);
+    border-width: 1.5px;
+    transition: padding-top .1s ease, margin-top .1s ease;
+  }
+}
+
+.tab-close {
+  color: var(--c-text);
+  text-align: right;
+  cursor: pointer;
+}
+
+li.active {
+  button {
+    background-color: var(--c-bg-4);
+    color: var(--c-text);
+    padding-top: 1rem;
+    margin-top: 0;
+    transition: padding-top .1s ease, margin-top .1s ease;
+  }
+}

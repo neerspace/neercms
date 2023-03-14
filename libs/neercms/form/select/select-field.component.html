@@ -1,0 +1,25 @@
+<div class="row mb-3 form-grp">
+  <label *ngIf="label"
+         [for]="controlName"
+         class="col-sm-4 col-form-label">
+    {{label}}
+    <sup *ngIf="required"
+         class="required-mark">*
+    </sup>
+  </label>
+  <div class="col-sm-8">
+    <app-dropdown [buttonText]="selected.title"
+                  buttonIcon="marker"
+                  [formFit]="true"
+                  [disabled]="disabled">
+      <li *ngFor="let col of options"
+          class="menu-item form-check dropdown-item"
+          (click)="onOptionSelect(col)">
+        {{col.title}}
+        <div *ngIf="col.markerColor"
+             class="dropdown-marker"
+             style="background-color: {{col.markerColor}};"></div>
+      </li>
+    </app-dropdown>
+  </div>
+</div>

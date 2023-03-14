@@ -1,0 +1,29 @@
+<div class="row mb-3 form-grp">
+  <label [for]="controlName" class="col-sm-4 col-form-label">
+    {{label}}<sup *ngIf="required" class="required-mark"> *</sup>
+  </label>
+  <div class="col-sm-8">
+    <app-text-area-input
+      #input
+      [controlName]="controlName"
+      [size]="size"
+      [maxLength]="maxLength">
+    </app-text-area-input>
+  </div>
+
+  <app-field-message
+    *ngIf="maxLength > 0"
+    size="small"
+    [text]="maxLength - input.value.length"
+    [show]="focused"
+    [warn]="input.value.length > maxLength * .8"
+    [error]="input.value.length >= maxLength">
+  </app-field-message>
+
+  <app-field-message
+    [text]="errors.required"
+    [show]="!focused && formControl.touched && formControl.hasError('required')"
+    [error]="true">
+  </app-field-message>
+
+</div>

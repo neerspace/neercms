@@ -1,0 +1,13 @@
+textarea {
+  &.small {
+    min-height: 2.2rem;
+    height: 2.3835rem;
+    max-height: 5.3rem;
+  }
+
+  &.large {
+    min-height: 8.25rem;
+    height: 17.25rem;
+    max-height: 32.25rem;
+  }
+}

@@ -1,0 +1,90 @@
+<ng-container [ngSwitch]="column.filter">
+  <!-- Plain Text Filter -->
+  <div class="filter-wrapper" *ngSwitchCase="FilterType.text">
+    <input class="filter-field form-control"
+           autocomplete="off"
+           [formControl]="formControl"
+           [id]="column.key"
+           [type]="column.filter"/>
+  </div>
+
+  <!-- Text with Options Filter -->
+  <div class="filter-wrapper" *ngSwitchCase="FilterType.optText">
+    <input class="filter-field form-control"
+           autocomplete="off"
+           [formControl]="formControl"
+           [id]="column.key"
+           [type]="column.filter"/>
+    <select class="form-select filter-select" [formControl]="extraFormControl!">
+      <option *ngFor="let op of textOperators" [value]="op[0]">
+        {{op[1]}}
+      </option>
+    </select>
+  </div>
+
+  <!-- Plain Number Filter -->
+  <div class="filter-wrapper" *ngSwitchCase="FilterType.number">
+    <ng-container *ngTemplateOutlet="numberInput"></ng-container>
+  </div>
+
+  <!-- Number Range Filter -->
+  <!--  <div class="filter-wrapper" *ngSwitchCase="FilterType.numberRange">-->
+  <!--    <ng-container *ngTemplateOutlet="numberInput"></ng-container>-->
+  <!--    <span class="filter-sep">to</span>-->
+  <!--    <ng-container *ngTemplateOutlet="numberInput"></ng-container>-->
+  <!--  </div>-->
+
+  <!-- Number with Options Filter -->
+  <div class="filter-wrapper" *ngSwitchCase="FilterType.optNumber">
+    <ng-container *ngTemplateOutlet="numberInput"></ng-container>
+    <select class="form-select filter-select" [formControl]="extraFormControl!">
+      <option *ngFor="let op of numberOperators" [value]="op[0]">
+        {{op[1]}}
+      </option>
+    </select>
+  </div>
+
+  <!-- Date Range Filter -->
+  <div class="filter-wrapper" *ngSwitchCase="FilterType.dateRange">
+    <input app-date-picker
+           [id]="column.key"
+           type="text"
+           class="form-control"
+           [date]="formControl"
+           [dateTo]="extraFormControl!"
+           datePickerMode="date-range"/>
+  </div>
+
+  <!-- Dropdown Menu Filter -->
+  <div class="filter-wrapper" *ngSwitchCase="FilterType.dropdown">
+    <select class="form-select" [formControl]="formControl!">
+      <option value="">Not Selected</option>
+      <option *ngFor="let opt of column.options!" [value]="opt">
+        {{opt}}
+      </option>
+    </select>
+  </div>
+
+  <!-- Yes/No Dropdown Filter -->
+  <div class="filter-wrapper" *ngSwitchCase="FilterType.boolDropdown">
+    <select class="form-select" [formControl]="formControl!">
+      <option value="">All</option>
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  </div>
+
+</ng-container>
+
+<ng-template #numberInput>
+  <input [formControl]="formControl"
+         [id]="column.key"
+         type="text"
+         class="filter-field form-control"
+         lang="en"
+         autocomplete="off"
+         [mask]="numberInputProcessor.patternToMask(column.numberPattern)"
+         [allowNegativeNumbers]="!column.filterValueRange || column.filterValueRange.from! < 0 || column.filterValueRange.to! < 0"
+         (input)="onChange($event)"
+         (keyup)="onKeyUp($event)"/>
+</ng-template>

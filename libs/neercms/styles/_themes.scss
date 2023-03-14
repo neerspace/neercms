@@ -1,0 +1,37 @@
+:root {
+  --c-bg-1: #495057;
+  --c-bg-2: #343a40;
+  --c-bg-3: #212529;
+  --c-bg-4: #202326;
+  --c-bg-5: #1c1e1f;
+  --c-bg-transparent: #21252955;
+  --c-text: #fff;
+  --c-text-dim: #b9bec0;
+  --c-text-alt: #000;
+
+  --c-primary: #7646cc;
+  --c-accent: #9563ef;
+  --c-danger: #dc3545;
+  --c-warning: #ffc107;
+  --c-success: #198754;
+}
+
+.light-theme {
+  :root {
+    --c-bg-1: #f8f9fa;
+    --c-bg-2: #ced4da;
+    --c-bg-3: #adb5bd;
+    --c-bg-4: #212529;
+    --c-bg-5: #6c757d;
+    --c-bg-transparent: #6c757d55;
+    --c-text: #000;
+    --c-text-dim: #b9bec0;
+    --c-text-alt: #fff;
+
+    --c-primary: #7646cc;
+    --c-accent: #9563ef;
+    --c-danger: #dc3545;
+    --c-warning: #ffc107;
+    --c-success: #198754;
+  }
+}

@@ -1,0 +1,16 @@
+<app-dropdown key="column-chooser"
+              buttonIcon="la-columns"
+              buttonText="Columns">
+  <li *ngFor="let col of optionColumns"
+      class="menu-item form-check dropdown-item"
+      (click)="$event.stopPropagation()">
+    <label class="form-check-label">
+      <input class="form-check-input"
+             type="checkbox"
+             [disabled]="!col.hideable"
+             [checked]="!col.hidden"
+             (change)="onOptionChange(col, $event)">
+      {{col.title}}
+    </label>
+  </li>
+</app-dropdown>

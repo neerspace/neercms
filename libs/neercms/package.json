@@ -1,0 +1,29 @@
+{
+  "name": "neercms",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/animations": "^14.2.12",
+    "@angular/cdk": "^14.2.7",
+    "@angular/common": "^14.2.12",
+    "@angular/compiler": "^14.2.12",
+    "@angular/core": "^14.2.12",
+    "@angular/forms": "^14.2.12",
+    "@angular/platform-browser": "^14.2.12",
+    "@angular/platform-browser-dynamic": "^14.2.12",
+    "@angular/router": "^14.2.12",
+    "bootstrap": "^5.2.3",
+    "luxon": "^3.3.0"
+  },
+  "dependencies": {
+    "angular-split": "^14.1.0",
+    "flatpickr": "^4.6.13",
+    "ng2-flatpickr": "^9.0.0",
+    "ngx-mask": "^14.2.4",
+    "tslib": "^2.5.0",
+    "vanillajs-datepicker": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.2.0",
+    "@types/vanillajs-datepicker": "^1.2.1"
+  }
+}
