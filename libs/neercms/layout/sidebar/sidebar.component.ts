@@ -12,7 +12,7 @@ export class SidebarComponent {
 
   @Input() menuItems!: MenuItems;
   @Input() footerMenu!: IMenuItem;
-  @Input() logoPath!: string;
+  @Input() logoImage!: string;
   @Input() logoTitle!: string;
 
   constructor(private readonly storage: NeerStorageService) {
