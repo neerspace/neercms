@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-checkbox',
+  selector: 'nc-checkbox',
   templateUrl: './checkbox-field.component.html',
   styleUrls: ['./checkbox-field.component.scss', '../field-shared.scss'],
 })

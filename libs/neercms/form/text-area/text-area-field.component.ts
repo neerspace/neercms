@@ -3,7 +3,7 @@ import { Size } from 'neercms/form/types';
 import { FieldBaseComponent } from '../field-base.component';
 
 @Component({
-  selector: 'app-text-area-field',
+  selector: 'nc-text-area-field',
   templateUrl: './text-area-field.component.html',
   styleUrls: ['../field-shared.scss', './text-area-input.component.scss'],
 })

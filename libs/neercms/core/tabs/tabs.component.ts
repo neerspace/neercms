@@ -11,7 +11,7 @@ import {
 import { TabComponent } from './tab/tab.component';
 
 @Component({
-  selector: 'app-tabs',
+  selector: 'nc-tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.scss'],
 })

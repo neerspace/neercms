@@ -3,27 +3,27 @@
     {{label}}<sup *ngIf="required" class="required-mark"> *</sup>
   </label>
   <div class="col-sm-8">
-    <app-text-area-input
+    <nc-text-area-input
       #input
       [controlName]="controlName"
       [size]="size"
       [maxLength]="maxLength">
-    </app-text-area-input>
+    </nc-text-area-input>
   </div>
 
-  <app-field-message
+  <nc-field-message
     *ngIf="maxLength > 0"
     size="small"
     [text]="maxLength - input.value.length"
     [show]="focused"
     [warn]="input.value.length > maxLength * .8"
     [error]="input.value.length >= maxLength">
-  </app-field-message>
+  </nc-field-message>
 
-  <app-field-message
+  <nc-field-message
     [text]="errors.required"
     [show]="!focused && formControl.touched && formControl.hasError('required')"
     [error]="true">
-  </app-field-message>
+  </nc-field-message>
 
 </div>

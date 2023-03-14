@@ -1,7 +1,7 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
-  selector: 'app-tab',
+  selector: 'nc-tab',
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.scss'],
 })

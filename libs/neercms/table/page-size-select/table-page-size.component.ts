@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-page-size',
+  selector: 'nc-page-size',
   templateUrl: './table-page-size.component.html',
   styleUrls: ['./table-page-size.component.scss'],
 })

@@ -11,15 +11,15 @@
 
     <hr/>
 
-    <ul app-navigation class="sidebar-main">
-      <li app-nav-item *ngFor="let item of menuItems" [item]="item"></li>
+    <ul nc-navigation class="sidebar-main">
+      <li nc-nav-item *ngFor="let item of menuItems" [item]="item"></li>
     </ul>
 
     <hr/>
 
     <div class="sidebar-footer">
-      <ul app-navigation class="sidebar-main">
-        <li app-nav-item [item]="footerMenu" [inverse]="true"></li>
+      <ul nc-navigation class="sidebar-main">
+        <li nc-nav-item [item]="footerMenu" [inverse]="true"></li>
       </ul>
       <!--  <div class="sidebar-version">version – {{settings.applicationVersion}}</div>-->
     </div>

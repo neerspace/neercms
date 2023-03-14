@@ -2,7 +2,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { BoolInput } from 'neercms/shared/types';
 
 @Component({
-  selector: 'app-dropdown',
+  selector: 'nc-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
   host: {

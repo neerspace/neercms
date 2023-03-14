@@ -2,7 +2,7 @@ import { Component, HostBinding, HostListener, OnDestroy, OnInit } from '@angula
 import { ModalsService, IModalInfo } from 'neercms/services/viewport';
 
 @Component({
-  selector: 'app-modal-confirm',
+  selector: 'nc-modal-confirm',
   templateUrl: './modal-confirm.component.html',
   styleUrls: ['./modal-confirm.component.scss'],
   host: {

@@ -2,7 +2,7 @@ import { Component, Injector } from '@angular/core';
 import { FieldBaseComponent } from '../field-base.component';
 
 @Component({
-  selector: 'app-password-field',
+  selector: 'nc-password-field',
   templateUrl: './password-field.component.html',
   styleUrls: ['../field-shared.scss'],
 })

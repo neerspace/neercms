@@ -4,7 +4,7 @@ import { NumberInputProcessorService } from 'neercms/services';
 import { FieldBaseComponent } from '../field-base.component';
 
 @Component({
-  selector: 'app-number-field',
+  selector: 'nc-number-field',
   templateUrl: './number-field.component.html',
   styleUrls: ['../field-shared.scss', './number-field.component.scss'],
 })

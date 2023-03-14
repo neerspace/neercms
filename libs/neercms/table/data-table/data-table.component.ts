@@ -16,7 +16,7 @@ import { CustomColumnDirective } from '../custom-column.directive';
 import { TablePaginationComponent } from '../pagination/table-pagination.component';
 
 @Component({
-  selector: 'app-data-table',
+  selector: 'nc-data-table',
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss'],
 })

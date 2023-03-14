@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-toast-area',
+  selector: 'nc-toast-area',
   templateUrl: './toast-area.component.html',
   styleUrls: ['./toast-area.component.scss'],
   host: {

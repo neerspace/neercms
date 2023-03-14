@@ -13,7 +13,7 @@ import { ColumnInfo, DataTableError, FilterType } from 'neercms/table/types';
 export type FilterValue = string | number;
 
 @Component({
-  selector: 'app-table-filter-field',
+  selector: 'nc-table-filter-field',
   templateUrl: './table-filter-field.component.html',
   styleUrls: ['./table-filter-field.component.scss'],
 })

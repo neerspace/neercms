@@ -19,9 +19,9 @@
     </button>
   </div>
 
-  <app-field-message
+  <nc-field-message
     [text]="errors.required"
     [show]="!focused && formControl.touched && formControl.hasError('required')"
     [error]="true">
-  </app-field-message>
+  </nc-field-message>
 </div>

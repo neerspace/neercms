@@ -5,7 +5,7 @@ import { DateTime } from 'luxon';
 import { FieldBaseComponent } from '../field-base.component';
 
 @Component({
-  selector: 'app-date-field',
+  selector: 'nc-date-field',
   templateUrl: './date-field.component.html',
   styleUrls: ['../field-shared.scss', './date-field.component.scss'],
 })

@@ -2,7 +2,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { BoolInput } from 'neercms/shared/types';
 
 @Component({
-  selector: 'app-main-header',
+  selector: 'nc-main-header',
   templateUrl: './main-header.component.html',
   styleUrls: ['./main-header.component.scss'],
 })

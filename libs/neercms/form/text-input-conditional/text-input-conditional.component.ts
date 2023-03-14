@@ -5,7 +5,7 @@ import { InputType } from 'neercms/form/types';
 import { InputBaseComponent } from '../input-base.component';
 
 @Component({
-  selector: 'app-text-input-conditional',
+  selector: 'nc-text-input-conditional',
   templateUrl: './text-input-conditional.component.html',
   styleUrls: ['./text-input-conditional.component.scss'],
 })

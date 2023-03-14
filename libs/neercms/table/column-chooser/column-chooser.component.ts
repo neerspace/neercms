@@ -3,7 +3,7 @@ import { NeerStorageService } from 'neercms/services/storage';
 import { ColumnInfo } from 'neercms/table/types';
 
 @Component({
-  selector: 'app-column-chooser',
+  selector: 'nc-column-chooser',
   templateUrl: './column-chooser.component.html',
   styleUrls: ['./column-chooser.component.scss'],
 })

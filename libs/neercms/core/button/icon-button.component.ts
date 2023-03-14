@@ -2,7 +2,7 @@ import { Component, ElementRef, EventEmitter, HostBinding, Input, Output } from 
 import { Variant } from 'neercms/services/viewport';
 
 @Component({
-  selector: 'button[app-icon-button]',
+  selector: 'button[nc-icon-button]',
   templateUrl: './icon-button.component.html',
   styleUrls: ['./icon-button.component.scss'],
 })

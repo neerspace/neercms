@@ -1,4 +1,4 @@
 <ng-container *ngIf="ready.state === 'ready' || ready.state === 'loading'">
   <ng-content></ng-content>
 </ng-container>
-<app-not-found *ngIf="ready.state === '404'"></app-not-found>
+<nc-not-found *ngIf="ready.state === '404'"></nc-not-found>

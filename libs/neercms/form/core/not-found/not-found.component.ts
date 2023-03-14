@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { randomSadEmoji } from 'neercms/shared/utilities';
 
 @Component({
-  selector: 'app-not-found',
+  selector: 'nc-not-found',
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss'],
 })

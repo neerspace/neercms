@@ -2,7 +2,7 @@ import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { LoaderService } from 'neercms/services/viewport';
 
 @Component({
-  selector: 'app-loading-bar',
+  selector: 'nc-loading-bar',
   template: ``,
   styleUrls: ['./loading-bar.component.scss'],
 })

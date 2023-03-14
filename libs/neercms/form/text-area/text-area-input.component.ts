@@ -4,7 +4,7 @@ import { Size } from 'neercms/form/types';
 import { InputBaseComponent } from '../input-base.component';
 
 @Component({
-  selector: 'app-text-area-input',
+  selector: 'nc-text-area-input',
   template: `
     <textarea
       #input

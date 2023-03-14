@@ -26,22 +26,22 @@
     </button>
   </div>
 
-  <app-field-message *ngIf="maxLength > 0"
+  <nc-field-message *ngIf="maxLength > 0"
                      size="small"
                      [text]="maxLength - input.value.length"
                      [show]="focused"
                      [warn]="input.value.length > maxLength * 0.8"
-                     [error]="input.value.length >= maxLength"></app-field-message>
+                     [error]="input.value.length >= maxLength"></nc-field-message>
 
-  <app-field-message [text]="errors.required"
+  <nc-field-message [text]="errors.required"
                      [show]="!focused && formControl.touched && formControl.hasError('required')"
-                     [error]="true"></app-field-message>
+                     [error]="true"></nc-field-message>
 
-  <app-field-message [text]="errors.invalidEmail"
+  <nc-field-message [text]="errors.invalidEmail"
                      [show]="!focused && formControl.touched && formControl.hasError('email')"
-                     [error]="true"></app-field-message>
+                     [error]="true"></nc-field-message>
 
-  <app-field-message [text]="formControl.getError('api-error')"
+  <nc-field-message [text]="formControl.getError('api-error')"
                      [show]="formControl.hasError('api-error')"
-                     [error]="true"></app-field-message>
+                     [error]="true"></nc-field-message>
 </div>

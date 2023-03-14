@@ -2,7 +2,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { FormReadyWrapper } from 'neercms/form/types';
 
 @Component({
-  selector: 'form[app-form-layout]',
+  selector: 'form[nc-form-layout]',
   templateUrl: './form-layout.component.html',
   styleUrls: ['./form-layout.component.scss'],
   host: {

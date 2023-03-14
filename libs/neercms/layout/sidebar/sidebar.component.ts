@@ -3,7 +3,7 @@ import { NeerStorageService } from 'neercms/services/storage';
 import { IMenuItem, MenuItems } from 'neercms/layout/types';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'nc-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })

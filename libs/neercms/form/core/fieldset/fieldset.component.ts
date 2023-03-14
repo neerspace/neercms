@@ -2,7 +2,7 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { Size } from 'neercms/form/types';
 
 @Component({
-  selector: 'app-fieldset',
+  selector: 'nc-fieldset',
   template: '<ng-content></ng-content>',
   styleUrls: ['./fieldset.component.scss'],
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ul[app-navigation]',
+  selector: 'ul[nc-navigation]',
   template: `
     <ng-content></ng-content>
   `,

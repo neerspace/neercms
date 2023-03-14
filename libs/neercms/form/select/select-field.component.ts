@@ -13,7 +13,7 @@ import { FieldBaseComponent, FormBaseChanges } from '../field-base.component';
 type SelectFieldChanges = FormBaseChanges & { options: SimpleChange };
 
 @Component({
-  selector: 'app-select-field',
+  selector: 'nc-select-field',
   templateUrl: './select-field.component.html',
   styleUrls: ['./select-field.component.scss', '../field-shared.scss'],
 })

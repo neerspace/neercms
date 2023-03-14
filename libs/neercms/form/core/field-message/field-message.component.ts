@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, HostBinding, Input } from '@angul
 import { Size } from 'neercms/form/types';
 
 @Component({
-  selector: 'app-field-message',
+  selector: 'nc-field-message',
   template: `
     <div class="tooltip-arrow"></div>
     <div class="tooltip-inner">{{ text }}</div>

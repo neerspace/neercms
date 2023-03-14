@@ -10,8 +10,8 @@
     "app:watch": "ng build --watch --configuration development",
     "neercms:build": "ng build neercms",
     "neercms:watch": "ng build neercms --watch --configuration development",
-    "neercms:publish": "cd libs/neercms; npm version patch; npm publish",
-    "neercms:pure-publish": "cd libs/neercms; npm publish"
+    "neercms:prepublish": "cd libs/neercms; npm version patch; cd ../../; npm run neercms:build",
+    "neercms:publish": "npm run neercms:prepublish; cd dist/neercms; npm publish"
   },
   "dependencies": {
     "@angular/animations": "^14.2.12",

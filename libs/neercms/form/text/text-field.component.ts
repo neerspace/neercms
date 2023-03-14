@@ -5,7 +5,7 @@ import { BoolInput } from 'neercms/shared/types';
 import { FieldBaseComponent } from '../field-base.component';
 
 @Component({
-  selector: 'app-text-field',
+  selector: 'nc-text-field',
   templateUrl: './text-field.component.html',
   styleUrls: ['../field-shared.scss'],
 })

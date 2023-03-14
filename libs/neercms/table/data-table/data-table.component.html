@@ -38,8 +38,8 @@
     <th *ngFor="let col of $any(columns)"
         [formGroup]="filtersForm"
         [class.hidden]="col.hidden">
-      <app-table-filter-field *ngIf="col.key && col.filter && col.filter !== 'none'"
-                              [column]="col"></app-table-filter-field>
+      <nc-table-filter-field *ngIf="col.key && col.filter && col.filter !== 'none'"
+                              [column]="col"></nc-table-filter-field>
     </th>
     <!--<th *ngIf="buttons.length > 0"-->
     <!--    class="table-buttons">-->
@@ -110,20 +110,20 @@
 <div class="table-footer"
      [class.hidden]="!data || data.length === 0">
 
-  <app-column-chooser *ngIf="columnChooser"
+  <nc-column-chooser *ngIf="columnChooser"
                       [sequenceName]="columnChooserSequence!"
                       [(sequence)]="columnSequence"
-                      [(columns)]="columns"></app-column-chooser>
+                      [(columns)]="columns"></nc-column-chooser>
 
-  <app-page-size *ngIf="data && total > pageSize"
+  <nc-page-size *ngIf="data && total > pageSize"
                  [pageSize]="pageSize"
-                 (pageSizeChange)="changePageSize($event)"></app-page-size>
+                 (pageSizeChange)="changePageSize($event)"></nc-page-size>
 
   <div class="page-indicator">{{pageIndicatorText}}</div>
 
-  <app-pagination #pagination
+  <nc-pagination #pagination
                   [page]="page"
                   [pageSize]="pageSize"
                   [total]="total"
-                  (pageChange)="changePage($event)"></app-pagination>
+                  (pageChange)="changePage($event)"></nc-pagination>
 </div>

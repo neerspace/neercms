@@ -10,7 +10,7 @@ import {
 import { DateRangePicker } from 'vanillajs-datepicker';
 
 @Component({
-  selector: 'app-date-range-picker',
+  selector: 'nc-date-range-picker',
   template: `
     <input />
     <input />
