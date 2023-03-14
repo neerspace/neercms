@@ -1,6 +1,6 @@
 {
   "name": "neercmslib",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "pkg-install": "npm install",
@@ -8,7 +8,8 @@
     "app:build": "ng build",
     "app:watch": "ng build --watch --configuration development",
     "neercms:build": "ng build neercms",
-    "neercms:watch": "ng build neercms --watch --configuration development"
+    "neercms:watch": "ng build neercms --watch --configuration development",
+    "neercms:publish": "cd libs/neercms; npm version patch; npm publish"
   },
   "private": false,
   "dependencies": {

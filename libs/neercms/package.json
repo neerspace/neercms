@@ -1,6 +1,6 @@
 {
   "name": "neercms",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The core components to create Angular Admin Panel",
   "peerDependencies": {
     "@angular/animations": "^14.2.12",
