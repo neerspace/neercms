@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormModule } from '../../libs/neercms/form/form.module';
-import { NeercmsModule } from '../../libs/neercms/src/lib/neercms.module';
+import { CoreComponentsModule } from 'neercms/core';
+import { LayoutComponentsModule } from 'neercms/layout';
+import { TableComponentsModule } from '../../libs/neercms/table/table-components.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TestTableComponent } from './test-table/test-table.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent, TestTableComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NeercmsModule,
-    FormModule,
+    TableComponentsModule,
+    CoreComponentsModule,
+    LayoutComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

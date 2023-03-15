@@ -1,6 +1,6 @@
 {
   "name": "neercms",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "The core components to create Angular Admin Panel",
   "private": false,
   "peerDependencies": {

@@ -1,4 +1,12 @@
-import { Component, ContentChildren, Input, OnInit, QueryList, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ContentChildren,
+  Input,
+  OnInit,
+  QueryList,
+  ViewChild,
+} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NeerStorageService } from 'neercms/services/storage';
@@ -20,7 +28,7 @@ import { TablePaginationComponent } from '../pagination/table-pagination.compone
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss'],
 })
-export class DataTableComponent<T> implements OnInit {
+export class DataTableComponent<T> implements OnInit, AfterViewInit {
   @ViewChild('pagination') pagination!: TablePaginationComponent;
 
   @ContentChildren(CustomColumnDirective, { descendants: true })
@@ -44,6 +52,7 @@ export class DataTableComponent<T> implements OnInit {
 
   filtersForm!: FormGroup;
   private filters?: string;
+  private viewReady: boolean = false;
 
   constructor(
     private readonly router: Router,
@@ -106,6 +115,10 @@ export class DataTableComponent<T> implements OnInit {
       });
   }
 
+  ngAfterViewInit(): void {
+    this.viewReady = true;
+  }
+
   loadData(updatePaginationInfo: boolean = false): void {
     this.setQueryParams();
     this.loading = true;
@@ -128,8 +141,13 @@ export class DataTableComponent<T> implements OnInit {
 
         if (updatePaginationInfo || result.total !== this.total) {
           this.total = result.total;
-          this.pagination.setPage(this.page);
-          this.updatePageIndicatorText();
+          const interval = setInterval(() => {
+            if (this.viewReady) {
+              this.pagination.setPage(this.page);
+              this.updatePageIndicatorText();
+              clearInterval(interval);
+            }
+          }, 200);
         }
 
         setTimeout(() => (this.loading = false), 1200);

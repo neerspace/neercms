@@ -39,7 +39,7 @@
         [formGroup]="filtersForm"
         [class.hidden]="col.hidden">
       <nc-table-filter-field *ngIf="col.key && col.filter && col.filter !== 'none'"
-                              [column]="col"></nc-table-filter-field>
+                             [column]="col"></nc-table-filter-field>
     </th>
     <!--<th *ngIf="buttons.length > 0"-->
     <!--    class="table-buttons">-->
@@ -111,19 +111,19 @@
      [class.hidden]="!data || data.length === 0">
 
   <nc-column-chooser *ngIf="columnChooser"
-                      [sequenceName]="columnChooserSequence!"
-                      [(sequence)]="columnSequence"
-                      [(columns)]="columns"></nc-column-chooser>
+                     [sequenceName]="columnChooserSequence!"
+                     [(sequence)]="columnSequence"
+                     [(columns)]="columns"></nc-column-chooser>
 
   <nc-page-size *ngIf="data && total > pageSize"
-                 [pageSize]="pageSize"
-                 (pageSizeChange)="changePageSize($event)"></nc-page-size>
+                [pageSize]="pageSize"
+                (pageSizeChange)="changePageSize($event)"></nc-page-size>
 
   <div class="page-indicator">{{pageIndicatorText}}</div>
 
   <nc-pagination #pagination
-                  [page]="page"
-                  [pageSize]="pageSize"
-                  [total]="total"
-                  (pageChange)="changePage($event)"></nc-pagination>
+                 [page]="page"
+                 [pageSize]="pageSize"
+                 [total]="total"
+                 (pageChange)="changePage($event)"></nc-pagination>
 </div>

@@ -12,7 +12,28 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "neercms/core": ["libs/neercms/core/public-api"],
 
+      "neercms/form": ["libs/neercms/form/public-api"],
+      "neercms/form/types": ["libs/neercms/form/types/public-api"],
+
+      "neercms/layout": ["libs/neercms/layout/public-api"],
+      "neercms/layout/types": ["libs/neercms/layout/types/public-api"],
+
+      "neercms/shared/errors": ["libs/neercms/shared/errors/public-api"],
+      "neercms/shared/types": ["libs/neercms/shared/types/public-api"],
+      "neercms/shared/utilities": ["libs/neercms/shared/utilities/public-api"],
+
+      "neercms/split": ["libs/neercms/split/public-api"],
+
+      "neercms/services": ["libs/neercms/services/public-api"],
+      "neercms/services/storage": ["libs/neercms/services/storage/public-api"],
+      "neercms/services/viewport": ["libs/neercms/services/viewport/public-api"],
+
+      "neercms/table": ["libs/neercms/table/public-api"],
+      "neercms/table/formatters": ["libs/neercms/table/formatters/public-api"],
+      "neercms/table/sieve": ["libs/neercms/table/sieve/public-api"],
+      "neercms/table/types": ["libs/neercms/table/types/public-api"]
     },
     "declaration": false,
     "downlevelIteration": true,
