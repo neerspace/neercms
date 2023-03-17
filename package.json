@@ -8,7 +8,7 @@
     "app:start": "ng serve",
     "app:build": "ng build",
     "app:watch": "ng build --watch --configuration development",
-    "neercms:build": "ng build neercms",
+    "neercms:build": "ng build neercms --configuration production",
     "neercms:watch": "ng build neercms --watch --configuration development",
     "neercms:prepublish": "cd libs/neercms; npm version patch; cd ../../; npm run neercms:build",
     "neercms:publish": "npm run neercms:prepublish; cd dist/neercms; npm publish"

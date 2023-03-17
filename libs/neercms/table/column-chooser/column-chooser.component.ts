@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { NeerStorageService } from 'neercms/services/storage';
-import { ColumnInfo } from 'neercms/table/types';
+import { ColumnInfo, ColumnsChanges } from 'neercms/table/types';
 
 @Component({
   selector: 'nc-column-chooser',
   templateUrl: './column-chooser.component.html',
   styleUrls: ['./column-chooser.component.scss'],
 })
-export class ColumnChooserComponent implements OnInit {
+export class ColumnChooserComponent implements OnChanges {
   @Input() columns!: ColumnInfo[];
   @Input() sequenceName!: string;
   @Input() sequence: string[] = [];
@@ -19,20 +19,13 @@ export class ColumnChooserComponent implements OnInit {
 
   constructor(private storage: NeerStorageService) {}
 
-  ngOnInit(): void {
-    this.sequence ??= this.storage.getColumnSequence(this.sequenceName) || [];
-
-    if (this.sequence && this.sequence.length > 0) {
-      this.optionColumns = this.columns.filter(x => x.key && x.title);
-    } else {
-      this.sequence = this.columns.filter(x => !x.hidden).map(x => x.key!);
+  ngOnChanges(changes: ColumnsChanges): void {
+    if (changes.columns) {
+      this.updateChooserOptions();
     }
-
-    this.optionColumns = this.columns.filter(x => x.key && x.title);
   }
 
   onOptionChange(column: ColumnInfo, event: Event) {
-    console.log('option changed!!!');
     const checkbox = event.target as HTMLInputElement;
     column.hidden = !checkbox.checked;
 
@@ -43,12 +36,28 @@ export class ColumnChooserComponent implements OnInit {
         column.hidden = false;
       } else {
         this.sequence = this.sequence.filter(x => x !== column.key);
+        this.sequenceChange.emit(this.sequence);
       }
     } else {
       this.sequence.push(column.key!);
+      this.sequenceChange.emit(this.sequence);
     }
 
     this.columnsChange.emit(this.columns);
     this.storage.setColumnSequence(this.sequenceName, this.sequence);
+  }
+
+  private updateChooserOptions() {
+    this.sequence ??= this.storage.getColumnSequence(this.sequenceName) || [];
+
+    if (this.sequence && this.sequence.length > 0) {
+      this.optionColumns = this.columns.filter(x => x.key && x.title);
+    } else {
+      this.sequence = this.columns.filter(x => !x.hidden).map(x => x.key!);
+
+      setTimeout(() => this.sequenceChange.emit(this.sequence), 50);
+    }
+
+    this.optionColumns = this.columns.filter(x => x.key && x.title);
   }
 }

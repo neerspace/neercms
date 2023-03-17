@@ -1,19 +1,16 @@
-import { Injector } from '@angular/core';
+import { inject } from '@angular/core';
 import { IOutputAreaSizes } from 'angular-split';
 import { NeerStorageService } from 'neercms/services/storage';
 import { ViewportService } from 'neercms/services/viewport';
 import { ColumnInfo } from 'neercms/table/types';
 
 export abstract class SplitBaseComponent<T> {
-  private storage: NeerStorageService;
-  private device: ViewportService;
+  private readonly storage: NeerStorageService = inject(NeerStorageService);
+  private readonly device: ViewportService = inject(ViewportService);
 
   splitSizes: [number, number] = [100, 0];
 
-  protected constructor(injector: Injector, private splitSizesStorageKey: string) {
-    this.storage = injector.get(NeerStorageService);
-    this.device = injector.get(ViewportService);
-
+  protected constructor(private readonly splitSizesStorageKey: string) {
     this.splitSizes = this.storage.getSplitSizes(this.splitSizesStorageKey) || [100, 0];
     if (this.splitSizes.length !== 2) {
       this.splitSizes = [100, 0];

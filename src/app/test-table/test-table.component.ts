@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ColumnInfo, FilterType, IFilterInfo } from 'neercms/table/types';
-import { Observable, of } from 'rxjs';
+import { delay, Observable, of } from 'rxjs';
 import { formatAsDate, formatAsText } from '../../../libs/neercms/table/utilities/formatters';
+import { TestFormService } from './test-form.service';
 
 @Component({
   selector: 'app-test-table',
   templateUrl: './test-table.component.html',
   styleUrls: ['./test-table.component.scss'],
 })
-export class TestTableComponent {
+export class TestTableComponent implements OnInit {
+  showFilters: boolean = false;
   columns: ColumnInfo[] = [
     {
       key: 'id',
@@ -43,6 +45,14 @@ export class TestTableComponent {
     },
   ];
 
+  constructor(public readonly testService: TestFormService) {
+    console.log(testService.form);
+  }
+
+  ngOnInit() {
+    this.testService.init(true);
+  }
+
   fetchFilter(params: IFilterInfo): Observable<any> {
     return of({
       data: [
@@ -54,6 +64,6 @@ export class TestTableComponent {
         },
       ],
       total: 123,
-    });
+    }).pipe(delay(2000));
   }
 }

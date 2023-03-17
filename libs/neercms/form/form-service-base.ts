@@ -1,4 +1,4 @@
-import { Injector } from '@angular/core';
+import { inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormReady, FormReadyWrapper } from 'neercms/form/types';
@@ -6,19 +6,13 @@ import { ModalsService, ToasterService } from 'neercms/services/viewport';
 
 export abstract class FormServiceBase {
   public readonly form: FormGroup;
-  public readonly router: Router;
-  public readonly modals: ModalsService;
-  public readonly toaster: ToasterService;
-
-  private readonly formBuilder: FormBuilder;
+  public readonly router: Router = inject(Router);
+  public readonly modals: ModalsService = inject(ModalsService);
+  public readonly toaster: ToasterService = inject(ToasterService);
+  private readonly formBuilder = inject(FormBuilder);
   private readyWrap: FormReadyWrapper = new FormReadyWrapper();
 
-  protected constructor(injector: Injector, controls: object) {
-    this.router = injector.get(Router);
-    this.formBuilder = injector.get(FormBuilder);
-    this.modals = injector.get(ModalsService);
-    this.toaster = injector.get(ToasterService);
-
+  protected constructor(controls: object) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
 
     this.form = this.formBuilder.group(controls) as any;

@@ -8,7 +8,10 @@ import { Variant } from 'neercms/services/viewport';
 })
 export class IconButtonComponent {
   @HostBinding('class') get class() {
-    return 'btn btn-icon btn-outline-' + this.variant + (this.disabled ? ' disabled' : '');
+    const hasContent = !!this.currentElementRef.nativeElement.querySelector('span').innerHTML;
+    const disabled = this.disabled ? 'disabled' : '';
+    const type = hasContent ? '' : 'icon-only';
+    return `btn btn-icon btn-outline-${this.variant} ${disabled} ${type}`;
   }
 
   @Input() variant: Variant = 'primary';
@@ -16,7 +19,7 @@ export class IconButtonComponent {
   @Input() disabled: boolean = false;
   @Output() onclick: EventEmitter<MouseEvent> = new EventEmitter();
 
-  constructor(currentElementRef: ElementRef) {
+  constructor(private readonly currentElementRef: ElementRef) {
     const button = currentElementRef.nativeElement as HTMLButtonElement;
     button.onclick = event => {
       // Perform click action only when button is not disabled

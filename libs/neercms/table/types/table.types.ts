@@ -1,3 +1,4 @@
+import { SimpleChange, SimpleChanges } from '@angular/core';
 import { DateTime } from 'luxon';
 import { NumberPattern } from 'neercms/form/types';
 import { Observable } from 'rxjs';
@@ -8,6 +9,8 @@ export class DataTableError extends Error {
     this.name = 'Custom Error of DataTable';
   }
 }
+
+export type ColumnsChanges = SimpleChanges & { columns: SimpleChange };
 
 export interface IFiltered<TModel> {
   total: number;

@@ -36,6 +36,7 @@ export class DataTableComponent<T> implements OnInit, AfterViewInit {
 
   @Input() defaultSorting: string | null = 'id';
   @Input() columns: ColumnInfo[] = [];
+  @Input() showFilters: boolean = true;
   @Input() columnChooser: boolean = false;
   @Input() columnChooserSequence?: string;
   @Input() onFilter!: FetchApiEvent<T>;

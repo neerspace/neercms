@@ -34,7 +34,7 @@
     <!--      </button>-->
     <!--</th>-->
   </tr>
-  <tr>
+  <tr *ngIf="showFilters">
     <th *ngFor="let col of $any(columns)"
         [formGroup]="filtersForm"
         [class.hidden]="col.hidden">

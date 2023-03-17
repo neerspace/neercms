@@ -8,4 +8,8 @@
   > * {
     display: inline-block;
   }
+
+  &.icon-only {
+    padding-right: .25rem !important;
+  }
 }
