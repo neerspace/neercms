@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxMaskModule } from 'ngx-mask';
 import { CoreComponentsModule } from 'neercms/core';
+import { NgxMaskModule } from 'ngx-mask';
 import { CheckboxFieldComponent } from './checkbox/checkbox-field.component';
 import { FieldMessageComponent } from './core/field-message/field-message.component';
 import { FieldsetComponent } from './core/fieldset/fieldset.component';

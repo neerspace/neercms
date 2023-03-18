@@ -28,8 +28,18 @@
               "src/assets"
             ],
             "styles": [
-              "libs/neercms/styles/lib/line-awesome.min.css",
-              "src/styles.scss"
+              "src/styles/line-awesome.min.css",
+              "src/styles.scss",
+              {
+                "input": "libs/neercms/styles/themes/default.scss",
+                "bundleName": "light",
+                "inject": true
+              },
+              {
+                "input": "libs/neercms/styles/themes/nethub-dark.scss",
+                "bundleName": "dark",
+                "inject": false
+              }
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"

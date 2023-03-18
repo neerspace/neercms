@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+import { FormServiceBase } from 'neercms/form';
+import { ThemeService } from 'neercms/services/theme';
+import { Theme, themes } from '../../../../themes';
+
+interface ISettings {
+  theme: Theme;
+}
+
+@Injectable({ providedIn: 'root' })
+export class SettingsService extends FormServiceBase {
+  initialState: ISettings;
+
+  constructor(private readonly themeService: ThemeService<Theme>) {
+    super({
+      themeName: [themeService.currentThemeName, []],
+    });
+
+    this.initialState = this.form.getRawValue();
+    this.themeService.init(themes);
+  }
+
+  applyChanges() {
+    const themeControl = this.form.get('themeName')!;
+    console.log(themeControl.value);
+    console.log(this.initialState);
+    if (themeControl.value !== this.initialState.theme) {
+      this.themeService.setTheme(themeControl.value);
+    }
+  }
+}

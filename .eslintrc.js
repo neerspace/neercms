@@ -27,13 +27,6 @@ module.exports = {
           { type: 'element', prefix: 'app', style: 'kebab-case' },
         ],
         '@angular-eslint/no-host-metadata-property': ['error', { allowStatic: true }],
-        'no-relative-import-paths/no-relative-import-paths': [
-          'error',
-          {
-            allowSameFolder: true,
-            rootDir: 'src',
-          },
-        ],
       },
     },
     {

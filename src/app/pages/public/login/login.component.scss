@@ -1,0 +1,52 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+.login-form {
+  align-self: center;
+  background-color: var(--c-bg-5);
+  margin: 0 auto;
+  min-width: 450px;
+}
+
+.submit-button {
+  width: 100%;
+  margin: 1.5rem 0 1.5rem auto;
+  justify-content: center;
+}
+
+.login-header {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  img {
+    min-width: 4rem;
+    margin-right: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin: .5rem 1rem 0 0;
+  }
+}
+
+.login-body {
+  margin: 0 2rem;
+}
+
+.login-footer {
+  padding: 1rem 2rem 1rem;
+  background-color: var(--c-bg-3);
+  text-align: center;
+}
+
+.error-block {
+  color: var(--c-danger);
+}

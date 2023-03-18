@@ -1,0 +1,85 @@
+<nc-main-header pageTitle="Articles">
+  <button nc-icon-button
+          icon="la-filter"
+          variant="secondary"
+          [disabled]="hideTable || table === undefined || table.loading"
+          (click)="showFilters = !showFilters"></button>
+  <button nc-icon-button
+          icon="la-sync"
+          variant="primary"
+          [disabled]="hideTable || table === undefined || table.loading"
+          (click)="table.loadData()">
+    Refresh
+  </button>
+  <!--<button nc-icon-button-->
+  <!--        icon="la-download"-->
+  <!--        variant="primary"-->
+  <!--        [disabled]="table.loading"-->
+  <!--        (click)="downloadJson()">-->
+  <!--  JSON-->
+  <!--</button>-->
+</nc-main-header>
+
+<nc-main-content>
+
+  <as-split class="split-view"
+            unit="percent"
+            direction="vertical"
+            [gutterSize]="4"
+            (dragEnd)="resize($event.sizes)">
+
+    <as-split-area [size]="splitSizes[0]">
+      <div class="split-area-content">
+        <nc-data-table #table
+                       *ngIf="!hideTable"
+                       defaultSorting="-created,-published"
+                       [columns]="columns"
+                       [columnChooser]="true"
+                       [showFilters]="showFilters"
+                       columnChooserSequence="articles"
+                       [onFilter]="fetchFilter.bind(this)">
+
+          <!--<ng-container *appCustomColumn="'flag'; value as val; object as obj">-->
+          <!--  <button class="btn btn-secondary neutral flag-button general-button"-->
+          <!--          (click)="onDetailsClick(obj)">-->
+          <!--    <span class="text">Edit</span>-->
+          <!--    <span style="background-image: url({{flagService.flags[obj.languageCode]}})"-->
+          <!--          class="flag-img"></span>-->
+          <!--  </button>-->
+          <!--</ng-container>-->
+
+          <ng-container *appCustomColumn="'article_edit'; value as val; object as obj">
+            <button class="btn btn-secondary neutral general-button"
+                    (click)="onArticleDetails(obj)">
+              <span class="text">Edit</span>
+            </button>
+          </ng-container>
+
+          <ng-container *appCustomColumn="'article_languageCode'; value as val; object as obj">
+            <button class="btn neutral flag-button disabled"
+                    disabled>
+              <span class="text">{{obj.languageCode?.toUpperCase()}}</span>
+            </button>
+          </ng-container>
+
+          <ng-container *appCustomColumn="'article_status'; value as val; object as obj">
+            <span class="check check-{{val.toLowerCase()}}">{{val}}</span>
+          </ng-container>
+
+        </nc-data-table>
+      </div>
+
+    </as-split-area>
+
+    <as-split-area [size]="splitSizes[1]">
+      <div class="split-area-content">
+        <nc-tabs></nc-tabs>
+        <ng-template let-data="data"
+                     #localizationForm>
+          <app-article-form [model]="data"></app-article-form>
+        </ng-template>
+      </div>
+    </as-split-area>
+
+  </as-split>
+</nc-main-content>

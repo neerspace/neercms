@@ -1,23 +1,36 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { CoreComponentsModule } from 'neercms/core';
 import { LayoutComponentsModule } from 'neercms/layout';
-import { TableComponentsModule } from '../../libs/neercms/table/table-components.module';
+import { routes } from './_routes';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestTableComponent } from './test-table/test-table.component';
+import { ApplicationCoreModule } from './core/application-core.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
-  declarations: [AppComponent, TestTableComponent],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    TableComponentsModule,
+    // Angular Core
+    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    HttpClientModule,
+
+    // Router
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'top',
+      // anchorScrolling: 'enabled',
+    }),
+
+    // NeerCMS
     CoreComponentsModule,
     LayoutComponentsModule,
+
+    // App
+    ApplicationCoreModule,
+    PagesModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

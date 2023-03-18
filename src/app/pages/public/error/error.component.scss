@@ -1,0 +1,29 @@
+.error-wrapper {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.error {
+  text-align: center;
+  align-self: center;
+}
+
+.error-title {
+  font-size: 5rem;
+  color: var(--c-danger);
+  margin-bottom: 2rem;
+}
+
+.error-code {
+  font-size: 3rem;
+  color: var(--c-text-dim);
+  font-weight: bold;
+}
+
+.error-text {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}

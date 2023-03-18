@@ -25,10 +25,11 @@
 
       "neercms/services": ["libs/neercms/services/public-api"],
       "neercms/services/storage": ["libs/neercms/services/storage/public-api"],
+      "neercms/services/theme": ["libs/neercms/services/theme/public-api"],
       "neercms/services/viewport": ["libs/neercms/services/viewport/public-api"],
 
       "neercms/table": ["libs/neercms/table/public-api"],
-      "neercms/table/formatters": ["libs/neercms/table/formatters/public-api"],
+      "neercms/table/utilities": ["libs/neercms/table/utilities/public-api"],
       "neercms/table/sieve": ["libs/neercms/table/sieve/public-api"],
       "neercms/table/types": ["libs/neercms/table/types/public-api"]
     }

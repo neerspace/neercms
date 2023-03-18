@@ -1,0 +1,25 @@
+<nc-main-header short="true"
+                pageTitle="Admin Panel Settings">
+  <button nc-icon-button
+          icon="la-save"
+          variant="success"
+          [disabled]="false"
+          (onclick)="settingsService.applyChanges()">
+    Apply
+  </button>
+</nc-main-header>
+
+<nc-main-content>
+  <form nc-form-layout
+        [formGroup]="settingsService.form"
+        [ready]="settingsService.ready">
+    <nc-fieldset size="small">
+      <nc-select-field label="Color Theme"
+                       controlName="themeName"
+                       [options]="themes"></nc-select-field>
+    </nc-fieldset>
+  </form>
+
+  <!--<pre>{{roleService.form.value | json}}</pre>-->
+
+</nc-main-content>

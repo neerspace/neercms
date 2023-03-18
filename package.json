@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "pkg-install": "npm install",
-    "app:start": "ng serve",
+    "app:start": "ng serve --port 4200 --disable-host-check",
     "app:build": "ng build",
     "app:watch": "ng build --watch --configuration development",
     "neercms:build": "ng build neercms --configuration production",

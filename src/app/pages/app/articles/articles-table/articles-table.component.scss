@@ -1,0 +1,16 @@
+.split-view {
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+.check-pending::before {
+  background-color: var(--c-warning);
+}
+
+.check-published::before {
+  background-color: var(--c-success);
+}
+
+.check-banned::before {
+  background-color: var(--c-danger);
+}

@@ -1,0 +1,63 @@
+<nc-main-header pageTitle="Article Localization: {{model.status}}">
+  <button nc-icon-button
+          [icon]="locked ? 'la-lock' : 'la-unlock'"
+          variant="secondary"
+          (onclick)="locked = !locked">
+    {{locked ? 'Locked' : 'Unlocked'}}
+  </button>
+  <button nc-icon-button
+          icon="la-ban"
+          variant="danger"
+          [disabled]="locked"
+          (onclick)="articleService.delete(model.id)">
+    Delete
+  </button>
+  <button nc-icon-button
+          icon="la-save"
+          variant="success"
+          [disabled]="locked"
+          (onclick)="submit()">
+    Save
+  </button>
+</nc-main-header>
+
+<nc-main-content>
+  <form nc-form-layout
+        [formGroup]="articleService.form"
+        [ready]="articleService.ready">
+
+    <nc-fieldset size="small">
+      <nc-number-field label="ID"
+                        controlName="id"
+                        [disabled]="true"
+                        [allowCopy]="true"></nc-number-field>
+      <nc-text-field label="Language Code"
+                      controlName="languageCode"
+                      [disabled]="true"
+                      [allowCopy]="true"></nc-text-field>
+      <nc-date-field label="Created At"
+                      controlName="created"
+                      type="date-time"
+                      [disabled]="true"></nc-date-field>
+
+    </nc-fieldset>
+    <hr />
+    <nc-fieldset size="small">
+
+      <nc-text-field label="Views"
+                      controlName="views"
+                      [disabled]="true"></nc-text-field>
+      <nc-text-field label="Rating"
+                      controlName="rate"
+                      [disabled]="true"></nc-text-field>
+    </nc-fieldset>
+    <hr />
+    <nc-fieldset size="large">
+      <nc-text-area-field label="Title"
+                           controlName="title"
+                           size="small"
+                           [disabled]="locked"></nc-text-area-field>
+    </nc-fieldset>
+
+  </form>
+</nc-main-content>

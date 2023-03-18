@@ -28,4 +28,12 @@ export class NeerStorageService extends StorageBase<NeerStorageKey> {
   set sidebarCollapsed(value: boolean) {
     this.setItem(NeerStorageKey.SidebarCollapsed, value ? 'hide' : 'show');
   }
+
+  get theme(): string | null {
+    return this.getItem(NeerStorageKey.Theme);
+  }
+
+  set theme(value: string | null) {
+    this.setItem(NeerStorageKey.Theme, value);
+  }
 }
