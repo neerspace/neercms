@@ -42,7 +42,9 @@ export class ThemeService<TTheme extends string = string> {
   private get defaultTheme(): TTheme {
     const themes = Object.entries(this.themes!);
     const isDark = this.darkBrowserTheme.matches;
-    return themes.find(([name, theme]) => (theme as IThemeInfo).isDark === isDark)![0] as TTheme;
+    return themes.find(
+      ([name, theme]) => (theme as IThemeInfo).styles?.dark === isDark,
+    )![0] as TTheme;
   }
 
   get currentThemeName(): TTheme {
@@ -72,8 +74,9 @@ export class ThemeService<TTheme extends string = string> {
     if (!this.themes) {
       throw new Error('Themes mast be initialized before set');
     }
-    if (Object.keys(this.themes).includes(theme)) {
-      this.style.href = `/${theme}.css`;
+    const themeInfo = this.themes[theme];
+    if (themeInfo) {
+      this.style.href = themeInfo.stylesheet ? `/${themeInfo.stylesheet}.css` : '';
       this.storage.theme = theme;
     } else {
       console.warn('Unknown theme name:', theme);

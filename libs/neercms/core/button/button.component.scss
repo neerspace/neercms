@@ -4,9 +4,11 @@
   flex-wrap: nowrap;
   align-items: center;
   padding-right: 1.25rem;
+  cursor: pointer;
 
   > * {
     display: inline-block;
+    cursor: pointer;
   }
 
   &.icon-only {

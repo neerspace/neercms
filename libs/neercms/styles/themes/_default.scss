@@ -2,15 +2,15 @@
 
 // Grayscale colors
 $white: #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #555960;
-$gray-500: #484c52;
-$gray-600: #3f4348;
-$gray-700: #373b3f;
-$gray-800: #33363a;
-$gray-900: #202225;
+$gray-100: #D8D8D6;
+$gray-200: #a0a1a2;
+$gray-300: #7b7b80;
+$gray-400: #5c5d5e;
+$gray-500: #4e4e50;
+$gray-600: #3e3f44;
+$gray-700: #2c2e31;
+$gray-800: #1F2023;
+$gray-900: #1a1c1e;
 $black: #000;
 
 // Colorful colors
@@ -27,7 +27,7 @@ $cyan: #0dcaf0;
 
 // Theme colors
 $primary: $purple;
-$secondary: $gray-900;
+$secondary: #9563ef;
 $success: $green;
 $info: $cyan;
 $warning: $orange;
@@ -59,25 +59,13 @@ $theme-colors: (
 ) !default;
 // scss-docs-end theme-colors-map
 
-$body-bg: $gray-300;
+$body-bg: $gray-800;
 $body-color: $black;
 
-@import 'bootstrap/scss/bootstrap';
-
 :root {
-  --c-bg-1: #afbdcb;
-  --c-bg-2: #a1afbd;
-  --c-bg-3: #b0becc;
-  --c-bg-4: #8d9aa6;
-  --c-bg-5: #616669;
-  --c-bg-transparent: rgba(102, 112, 122, 0.33);
-  --c-text: #000000;
-  --c-text-dim: #5a5d5e;
-  --c-text-alt: #eaeaea;
-
-  --c-primary: #7646cc;
-  --c-accent: #9563ef;
-  --c-danger: #dc3545;
-  --c-warning: #fd7e14;
-  --c-success: #198754;
+  //--bg-transparent: rgba(102, 112, 122, 0.33);
+  --text: #{$white};
+  --text-dim: #{$gray-600};
+  --text-alt: #{$black};
+  --primary-alt: #{lighten($primary, 10%)};
 }

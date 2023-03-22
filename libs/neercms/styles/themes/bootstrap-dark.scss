@@ -1,0 +1,79 @@
+$dark-mode: true;
+
+@import './shared';
+
+// Grayscale colors
+$white: #fff;
+$gray-100: #D8D8D6;
+$gray-200: #a0a1a2;
+$gray-300: #7b7b80;
+$gray-400: #5c5d5e;
+$gray-500: #4e4e50;
+$gray-600: #3e3f44;
+$gray-700: #2c2e31;
+$gray-800: #1F2023;
+$gray-900: #1a1c1e;
+$black: #000;
+
+// Colorful colors
+$blue: #0d6efd;
+$indigo: #6610f2;
+$purple: #7646cc;
+$pink: #d63384;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+
+// Theme colors
+$primary: $purple;
+$secondary: $gray-600;
+$success: $green;
+$info: $cyan;
+$warning: $orange;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+// scss-docs-end theme-colors-map
+
+$body-bg: $gray-700;
+$body-color: $white;
+$dropdown-link-color: $white;
+
+@import 'bootstrap/scss/bootstrap';
+
+
+:root {
+  //--bg-transparent: rgba(102, 112, 122, 0.33);
+  --text: #{$white};
+  --text-dim: #{$gray-600};
+  --text-alt: #{$black};
+  --primary-alt: #{lighten($primary, 7%)};
+}
+
+nc-dropdown {
+  --dropdown-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"))};
+}
+
+nc-sidebar {
+  --sidebar-bg: #{$gray-600};
+  --sidebar-separators: #{$gray-700};
+  --sidebar-color: #{$white};
+  --sidebar-active-color: #{$white};
+  --sidebar-active-bg: #{$gray-700};
+  --sidebar-menu-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"))};
+}

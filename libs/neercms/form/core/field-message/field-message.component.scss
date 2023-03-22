@@ -32,21 +32,21 @@
 
     &:before {
       border-width: .5rem;
-      border-right-color: var(--c-bg-1);
+      border-right-color: var(--gray-500);
     }
   }
 
   .tooltip-inner {
     padding: .2rem .5rem;
-    background-color: var(--c-bg-1);
-    border-right: .33rem solid var(--c-success);
+    background-color: var(--gray-500);
+    border-right: .33rem solid var(--success);
   }
 
   &.warn .tooltip-inner {
-    border-color: var(--c-warning);
+    border-color: var(--warning);
   }
 
   &.danger .tooltip-inner {
-    border-color: var(--c-danger);
+    border-color: var(--danger);
   }
 }

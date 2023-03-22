@@ -18,33 +18,56 @@ import { Themes } from 'neercms/services/theme';
 export enum Theme {
   Dark = 'dark',
   Light = 'light',
-  VSLight = 'VSLight',
-  Darcula = 'Darcula',
+  BootstrapLight = 'bootstrap-light',
+  BootstrapDark = 'bootstrap-dark',
+  // VSLight = 'VSLight',
+  // Darcula = 'Darcula',
 }
 
 export const themes: Themes<Theme> = {
   [Theme.Dark]: {
     displayName: 'NetHub Dark',
-    className: 'dark',
-    icon: 'dark_mode',
-    isDark: true,
+    stylesheet: 'dark',
+    styles: {
+      dark: true,
+      buttons: 'outline',
+    },
   },
   [Theme.Light]: {
     displayName: 'Blue Light',
-    className: 'dark',
+    stylesheet: 'bootstrap-dark',
+    styles: {
+      dark: false,
+      buttons: 'filled',
+    },
+  },
+  [Theme.BootstrapDark]: {
+    displayName: 'Dark',
+    stylesheet: 'bootstrap-dark',
     icon: 'light_mode',
-    isDark: false,
+    styles: {
+      dark: true,
+      buttons: 'outline',
+    },
   },
-  [Theme.VSLight]: {
-    displayName: 'Visual Studio Light',
-    className: 'light',
-    icon: 'light_mode',
-    isDark: false,
+  [Theme.BootstrapLight]: {
+    displayName: 'Light',
+    stylesheet: 'bootstrap-light',
+    styles: {
+      dark: false,
+      buttons: 'filled',
+    },
   },
-  [Theme.Darcula]: {
-    displayName: 'JetBrains Darcula',
-    className: 'dark',
-    icon: 'dark_mode',
-    isDark: true,
-  },
+  // [Theme.VSLight]: {
+  //   displayName: 'Visual Studio Light',
+  //   className: 'light',
+  //   icon: 'light_mode',
+  //   isDark: false,
+  // },
+  // [Theme.Darcula]: {
+  //   displayName: 'JetBrains Darcula',
+  //   className: 'dark',
+  //   icon: 'dark_mode',
+  //   isDark: true,
+  // },
 };

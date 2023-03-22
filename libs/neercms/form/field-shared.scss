@@ -10,12 +10,18 @@ label {
 
 .required-mark {
   font-size: .75rem;
-  color: var(--c-danger);
+  color: var(--danger);
   padding-left: .15rem;
 }
 
 input, textarea, .dropdown-button {
-  border-color: var(--c-bg-1) !important;
+  border-color: var(--input-border-color) !important;
+  color: var(--input-color);
+  background-color: var(--input-bg);
+
+  &[disabled] {
+    cursor: text;
+  }
 }
 
 .input-wrapper {
@@ -31,20 +37,20 @@ input, textarea, .dropdown-button {
   padding: .075rem 0 0;
   border: none;
   border-radius: 50%;
-  color: var(--c-text);
-  background-color: var(--c-bg-2);
+  color: var(--text);
+  background-color: var(--gray-500);
 
   &:hover {
-    background-color: var(--c-bg-1);
+    background-color: var(--gray-600);
   }
 
   &:focus, &:active {
-    background-color: var(--c-primary);
+    background-color: var(--primary);
   }
 
   &:focus-visible {
     //outline: none;
-    //border: var(--c-primary) auto 1px;
+    //border: var(--primary) auto 1px;
   }
 }
 

@@ -2,11 +2,11 @@ import { Component, ElementRef, EventEmitter, HostBinding, Input, Output } from 
 import { Variant } from 'neercms/services/viewport';
 
 @Component({
-  selector: 'button[nc-icon-button]',
-  templateUrl: './icon-button.component.html',
-  styleUrls: ['./icon-button.component.scss'],
+  selector: 'button[ncButton]',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss'],
 })
-export class IconButtonComponent {
+export class ButtonComponent {
   @HostBinding('class') get class() {
     const hasContent = !!this.currentElementRef.nativeElement.querySelector('span').innerHTML;
     const disabled = this.disabled ? 'disabled' : '';

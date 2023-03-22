@@ -1,4 +1,4 @@
-export * from './button/icon-button.component';
+export * from './button/button.component';
 export * from './dropdown/dropdown.component';
 export * from './loading-bar/loading-bar.component';
 export * from './modal-confirm/modal-confirm.component';

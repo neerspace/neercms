@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroupDirective, Validators } from '@angular/forms';
 import { InputType } from 'neercms/form/types';
-// import { textOperators } from '../../table/sieve';
 import { InputBaseComponent } from '../input-base.component';
 
 @Component({

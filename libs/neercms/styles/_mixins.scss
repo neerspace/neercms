@@ -11,3 +11,27 @@
   --moz-text-security: disc;
   --text-security: disc;
 }
+
+@mixin shadow() {
+  box-shadow: 0 .05rem .1rem .2rem var(--gray-700);
+}
+
+@mixin shadow-inverse() {
+  box-shadow: 0 -.05rem .1rem .2rem var(--gray-700);
+}
+
+
+@mixin animate-fade-in-down() {
+  animation: fadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

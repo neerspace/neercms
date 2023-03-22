@@ -4,13 +4,13 @@
 }
 
 .check-pending::before {
-  background-color: var(--c-warning);
+  background-color: var(--warning);
 }
 
 .check-published::before {
-  background-color: var(--c-success);
+  background-color: var(--success);
 }
 
 .check-banned::before {
-  background-color: var(--c-danger);
+  background-color: var(--danger);
 }

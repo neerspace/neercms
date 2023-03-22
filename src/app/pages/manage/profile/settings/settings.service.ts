@@ -14,10 +14,19 @@ export class SettingsService extends FormServiceBase {
   constructor(private readonly themeService: ThemeService<Theme>) {
     super({
       themeName: [themeService.currentThemeName, []],
+      text: [themeService.currentThemeName, []],
+      number: [0, []],
+      password: ['bla-bla-bla', []],
+      datetime: ['', []],
+      textarea: ['', []],
     });
 
     this.initialState = this.form.getRawValue();
     this.themeService.init(themes);
+
+    this.form.get('themeName')?.valueChanges.subscribe(() => {
+      this.applyChanges();
+    });
   }
 
   applyChanges() {

@@ -11,7 +11,7 @@ import { ArticleService } from '../article.service';
 export class ArticleFormComponent implements OnInit {
   @Input() model!: any;
 
-  locked: boolean = true;
+  locked: boolean = false;
 
   constructor(
     public readonly articleService: ArticleService,

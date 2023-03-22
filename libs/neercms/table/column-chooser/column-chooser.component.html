@@ -1,8 +1,8 @@
 <nc-dropdown key="column-chooser"
-              buttonIcon="la-columns"
-              buttonText="Columns">
+             buttonIcon="la-columns"
+             buttonText="Columns">
   <li *ngFor="let col of optionColumns"
-      class="menu-item form-check dropdown-item"
+      class="menu-item form-check dropdown-item{{!col.hideable ? ' inactive' : ''}}"
       (click)="$event.stopPropagation()">
     <label class="form-check-label">
       <input class="form-check-input"

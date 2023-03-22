@@ -1,3 +1,5 @@
+$dark-mode: false !default;
+
 // Grayscale colors
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
@@ -80,7 +82,7 @@ $enable-validation-icons: true;
 $enable-negative-margins: false;
 
 // Prefix for :root CSS variables
-$variable-prefix: bs-;
+$variable-prefix: '';
 $prefix: $variable-prefix;
 
 // Body
@@ -127,14 +129,31 @@ $border-radius-2xl: $border-radius;
 $border-radius-pill: $border-radius;
 
 // Close button
-$btn-close-color: $light;
-$btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>");
+$btn-close-color: null;
+$btn-close-bg: null;
+@if $dark-mode {
+  $btn-close-color: $light;
+  $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>") !default;
+} @else {
+  $btn-close-color: $dark;
+  $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>") !default;
+}
 
 
 // Accordion
-$accordion-color: $white;
-$arrow-down-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
-$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-color: null;
+$arrow-down-icon: null;
+$accordion-button-icon: null;
+@if $dark-mode {
+  $accordion-color: $white;
+  $arrow-down-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+  $accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+} @else {
+  $accordion-color: $black;
+  $arrow-down-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"));
+  $accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}
+
 $accordion-button-active-icon: $accordion-button-icon;
 $accordion-icon-width: 1.15rem;
 $accordion-border-width: 0;
@@ -144,39 +163,52 @@ $accordion-button-focus-box-shadow: 0;
 
 // Pagination
 $pagination-padding-x: .55rem;
-$pagination-bg: var(--c-bg-2);
-$pagination-color: var(--c-text);
-$pagination-border-color: var(--c-bg-3);
+$pagination-bg: var(--gray-600);
+$pagination-color: var(--text);
+$pagination-border-color: var(--gray-800);
 
-$pagination-hover-bg: var(--c-bg-3);
-$pagination-hover-color: var(--c-text);
-$pagination-hover-border-color: var(--c-bg-3);
+$pagination-hover-bg: var(--gray-700);
+$pagination-hover-color: var(--text);
+$pagination-hover-border-color: var(--gray-700);
 
-$pagination-disabled-color: var(--c-text);
-$pagination-disabled-bg: var(--c-bg-2);
-$pagination-disabled-border-color: var(--c-bg-3);
+$pagination-disabled-color: var(--text);
+$pagination-disabled-bg: var(--gray-600);
+$pagination-disabled-border-color: var(--gray-700);
 
-$pagination-focus-bg: var(--c-bg-3);
-$pagination-focus-color: var(--c-text);
+$pagination-focus-bg: var(--gray-700);
+$pagination-focus-color: var(--text);
 
 $pagination-transition: color .1s ease-in-out,
 background-color .05s ease-in-out,
 border-color .1s ease-in-out;
 
 // Modal
-$modal-content-bg: var(--c-bg-2);
-$modal-content-color: var(--c-text);
+$modal-content-bg: var(--gray-600);
+$modal-content-color: var(--text);
 $modal-header-border-width: 3px;
-$modal-header-border-color: var(--c-bg-1);
+$modal-header-border-color: var(--gray-500);
 $modal-footer-border-width: 0;
 
 // Table
-$table-active-bg: rgba(0, 0, 0, .15);
-$table-hover-bg: var(--c-bg-1);
+$table-active-bg: var(--gray-600);
+$table-hover-bg: var(--gray-600);
 
 // Form
-$input-disabled-bg: var(--c-bg-1);
+$input-bg: var(--gray-600);
+$input-border-color: var(--primary);
+$input-border-width: 1.5px;
+$input-disabled-bg: var(--gray-500);
+$input-btn-focus-color: var(--primary);
+$input-btn-focus-width: 1.5px;
 
 // Toast
 $toast-spacing: .5rem;
 $toast-font-size: 1.1rem;
+
+// Dropdown
+$dropdown-color: $white;
+$dropdown-link-color: $white;
+
+// Tabs
+$nav-tabs-border-color: var(--primary);
+$nav-tabs-border-width: 2px;

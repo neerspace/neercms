@@ -7,17 +7,17 @@ nc-main-header .btn {
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
-  -webkit-text-fill-color: var(--c-text);
+  -webkit-text-fill-color: var(--text);
   -webkit-box-shadow: none;
   transition: background-color 60000s 0s, color 60000s 0s;
 
   &:hover {
-    -webkit-text-fill-color: var(--c-text);
+    -webkit-text-fill-color: var(--text);
     -webkit-box-shadow: none;
   }
 
   &:focus {
-    -webkit-text-fill-color: var(--c-text);
+    -webkit-text-fill-color: var(--text);
     -webkit-box-shadow: none;
   }
 }
@@ -36,27 +36,27 @@ select:-webkit-autofill {
     left: -1rem;
     width: .6rem;
     height: .6rem;
-    border: 1px solid var(--c-bg-5);
+    border: 1px solid var(--gray-900);
   }
 
   &.check-true:before {
-    background-color: var(--c-success);
+    background-color: var(--success);
   }
 
   &.check-false:before {
-    background-color: var(--c-danger);
+    background-color: var(--danger);
   }
 }
 
 .counter {
-  color: var(--c-text-dim);
+  color: var(--text-dim);
 
   &.counter-positive {
-    color: var(--c-success);
+    color: var(--success);
   }
 
   &.counter-negative {
-    color: var(--c-danger);
+    color: var(--danger);
   }
 }
 
@@ -68,15 +68,15 @@ select:-webkit-autofill {
   }
 
   &[data-color=success] {
-    background-color: var(--c-success);
+    background-color: var(--success);
   }
 
   &[data-color=danger] {
-    background-color: var(--c-danger);
+    background-color: var(--danger);
   }
 
   &[data-color=info] {
-    background-color: var(--c-accent);
+    background-color: var(--primary);
   }
 }
 
@@ -85,7 +85,7 @@ select:-webkit-autofill {
 }
 
 .text-dimmed {
-  color: var(--c-text-dim);
+  color: var(--text-dim);
 }
 
 .split-area-content {
@@ -96,4 +96,12 @@ textarea {
   height: 8.25rem;
   min-height: 3.75rem;
   max-height: 20.25rem;
+}
+
+.dropdown-item {
+  color: var(--text) !important;
+
+  label, input {
+    cursor: pointer;
+  }
 }

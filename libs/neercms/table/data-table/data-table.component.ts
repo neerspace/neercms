@@ -39,12 +39,13 @@ export class DataTableComponent<T> implements OnInit, AfterViewInit {
   @Input() showFilters: boolean = true;
   @Input() columnChooser: boolean = false;
   @Input() columnChooserSequence?: string;
+  @Input() pageSizeOptions: number[] = [10, 25, 50, 100, 500];
+  @Input() pageSize: number = this.pageSizeOptions[0];
   @Input() onFilter!: FetchApiEvent<T>;
 
   sortsAsc = true;
   sorts!: string | null;
   page = 1;
-  pageSize = 10;
   total = 0;
   data?: any[];
   loading: boolean = true;

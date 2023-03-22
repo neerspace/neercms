@@ -1,3 +1,5 @@
+@import '../mixins';
+
 $calendar-width: 18rem;
 $day-width: 2.5rem;
 $time-height: 3rem;
@@ -13,8 +15,8 @@ $time-height: 3rem;
   position: absolute;
   width: $calendar-width;
   touch-action: manipulation;
-  background: var(--c-bg-2);
-  box-shadow: 0 .1rem .1rem .2rem var(--c-bg-5);
+  background-color: var(--picker-bg);
+  @include shadow;
 
   &.open,
   &.inline {
@@ -29,7 +31,8 @@ $time-height: 3rem;
   }
 
   &.animate.open {
-    animation: fpFadeInDown 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    // TODO: add animations here and also for dropdowns
+    //@include animate-fade-in-down;
   }
 
   &.inline {
@@ -53,11 +56,11 @@ $time-height: 3rem;
   }
 
   .flatpickr-innerContainer + .flatpickr-time {
-    border-top: 2px solid var(--c-bg-1);
+    border-top: 2px solid var(--gray-500);
   }
 
   .flatpickr-months {
-    border-bottom: 2px solid var(--c-bg-1);
+    border-bottom: 2px solid var(--gray-500);
   }
 
   &.noCalendar.hasTime .flatpickr-time {
@@ -127,7 +130,7 @@ $time-height: 3rem;
   display: flex;
 
   .flatpickr-month {
-    fill: var(--c-text);
+    fill: var(--text);
     height: $time-height;
     line-height: 1;
     text-align: center;
@@ -156,8 +159,8 @@ $time-height: 3rem;
     width: $time-height;
     padding: .7rem .5rem .75rem;
     z-index: 3;
-    color: var(--c-text);
-    fill: var(--c-text);
+    color: var(--text);
+    fill: var(--text);
 
     .flatpickr-disabled {
       display: none;
@@ -168,11 +171,11 @@ $time-height: 3rem;
     }
 
     &:hover {
-      background: var(--c-accent);
+      background: var(--gray-700);
     }
 
     &:hover svg {
-      fill: var(--c-text);
+      fill: var(--text);
     }
 
     svg {
@@ -234,7 +237,7 @@ $time-height: 3rem;
       &:after {
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
-        border-bottom: 4px solid var(--c-text);
+        border-bottom: 4px solid var(--text);
         top: 25%;
         left: 20%;
       }
@@ -246,7 +249,7 @@ $time-height: 3rem;
       &:after {
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
-        border-top: 4px solid var(--c-text);
+        border-top: 4px solid var(--text);
         top: 35%;
         left: 20%;
       }
@@ -257,7 +260,7 @@ $time-height: 3rem;
       border: none;
 
       &:hover {
-        background-color: var(--c-bg-3);
+        background-color: var(--gray-700);
       }
     }
   }
@@ -306,7 +309,6 @@ $time-height: 3rem;
   }
 }
 
-
 .flatpickr-current-month input.cur-year {
   color: inherit;
   cursor: text;
@@ -343,7 +345,7 @@ $time-height: 3rem;
 span.flatpickr-weekday {
   cursor: default;
   font-size: .9rem;
-  color: var(--c-text);
+  color: var(--text);
   line-height: 1;
   margin: 0;
   text-align: center;
@@ -357,15 +359,15 @@ span.flatpickr-weekday {
   overflow: hidden;
   display: flex;
   align-items: flex-start;
-  width: $calendar-width;
+  width: #{$calendar-width};
 }
 
 .dayContainer {
   padding: 0;
   text-align: left;
-  width: $calendar-width;
-  min-width: $calendar-width;
-  max-width: $calendar-width;
+  width: #{$calendar-width};
+  min-width: #{$calendar-width};
+  max-width: #{$calendar-width};
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -375,50 +377,52 @@ span.flatpickr-weekday {
 
 .flatpickr-day {
   cursor: pointer;
-  width: $day-width;
-  max-width: $day-width;
-  height: $day-width;
-  line-height: $day-width;
+  width: #{$day-width};
+  max-width: #{$day-width};
+  height: #{$day-width};
+  line-height: #{$day-width};
   margin: 0;
   display: inline-block;
   position: relative;
   justify-content: center;
   text-align: center;
-  color: var(--c-text);
+  color: var(--text);
 
   &.today {
-    border: 1px solid var(--c-text);
+    border: 1px solid var(--text);
   }
 
   &.prevMonthDay, &.nextMonthDay {
-    color: var(--c-text-dim);
+    color: var(--gray-200);
     opacity: 85%;
   }
 
   &.inRange {
-    background-color: var(--c-accent);
-    color: var(--c-text);
+    background-color: var(--primary-alt);
+    color: var(--picker-selected-color);
   }
 
   &.startRange, &.endRange {
-    background-color: var(--c-primary);
+    color: var(--picker-selected-color) !important;
+    background-color: var(--primary);
   }
 
   &:hover {
-    background-color: var(--c-primary);
+    color: var(--picker-selected-color) !important;
+    background-color: var(--primary);
   }
 
   &:focus {
-    background-color: var(--c-accent);
+    background-color: var(--accent);
   }
 
   &.selected {
-    background-color: var(--c-primary);
+    background-color: var(--primary);
   }
 
   &.selected, &:hover, &:focus {
     opacity: 100%;
-    color: var(--c-text);
+    color: var(--text);
   }
 }
 
@@ -501,7 +505,7 @@ span.flatpickr-weekday {
     padding: 0;
     height: $time-height * .75;
     line-height: inherit;
-    color: var(--c-text);
+    color: var(--text);
     font-size: 1rem;
     appearance: textfield;
 
@@ -520,7 +524,7 @@ span.flatpickr-weekday {
     height: inherit;
     float: left;
     line-height: inherit;
-    color: var(--c-text);
+    color: var(--text);
     font-weight: bold;
     width: 2%;
     user-select: none;
@@ -551,15 +555,4 @@ span.flatpickr-weekday {
 
 .flatpickr-input[readonly] {
   cursor: text;
-}
-
-@keyframes fpFadeInDown {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -20px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
 }

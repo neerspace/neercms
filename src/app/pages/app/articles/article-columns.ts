@@ -1,5 +1,5 @@
 import { ColumnInfo, ColumnStyle, FilterType } from 'neercms/table/types';
-import { formatAsDate, formatAsText } from 'neercms/table/utilities';
+import { deleteButton, editButton, formatAsDate, formatAsText } from 'neercms/table/utilities';
 import { ArticlesTableComponent } from './articles-table/articles-table.component';
 
 export function articleColumns(context: ArticlesTableComponent): ColumnInfo[] {
@@ -71,6 +71,30 @@ export function articleColumns(context: ArticlesTableComponent): ColumnInfo[] {
       hidden: false,
       filter: FilterType.dateRange,
       formatter: formatAsDate,
+    },
+    {
+      actions: [
+        {
+          button: deleteButton('del'),
+          onClick: ctx => {
+            context.modals.showConfirmDelete({
+              confirmed: res => {
+                console.log('confirmed:', res);
+              },
+            });
+          },
+        },
+        {
+          button: editButton('edit'),
+          onClick: ctx => {
+            context.modals.showConfirmPublish('Boomers', {
+              confirmed: res => {
+                console.log('confirmed:', res);
+              },
+            });
+          },
+        },
+      ],
     },
   ];
 }

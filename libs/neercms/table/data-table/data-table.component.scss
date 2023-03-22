@@ -1,14 +1,6 @@
-//table {
-//  min-width: 500px;
-//  display: block;
-//  overflow-x: auto;
-//  white-space: nowrap;
-//}
-
-//thead, tbody {
-//  display: table;
-//  width: 100%;
-//}
+table {
+  background-color: var(--table-bg);
+}
 
 th {
   padding: 0;
@@ -18,7 +10,7 @@ th {
   position: relative;
   width: 100%;
   padding: .5rem;
-  color: var(--c-text);
+  color: var(--table-header-color);
   font-weight: bold;
   display: flex;
   vertical-align: center;
@@ -27,7 +19,7 @@ th {
 
   &.sortable {
     &:hover {
-      background-color: var(--c-primary);
+      background-color: var(--table-header-hover-bg);
       //cursor: pointer;
 
       .sort-icon {
@@ -52,11 +44,11 @@ th {
 }
 
 thead tr {
-  background-color: var(--c-bg-3);
+  background-color: var(--table-header-bg);
 }
 
 tr {
-  border-color: var(--c-bg-1);
+  border-color: var(--gray-400);
 
   &:hover button {
     opacity: 1;
@@ -64,7 +56,7 @@ tr {
   }
 
   &:hover .no-data {
-    --bs-table-accent-bg: inherit;
+    --table-accent-bg: inherit;
   }
 
   .no-data {

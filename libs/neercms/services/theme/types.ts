@@ -1,8 +1,15 @@
+export type ButtonStyle = 'outline' | 'filled';
+
+export interface IThemeStyles {
+  dark: boolean;
+  buttons: ButtonStyle;
+}
+
 export interface IThemeInfo {
   displayName: string;
-  className: string;
-  icon: string;
-  isDark: boolean;
+  stylesheet: string;
+  icon?: string;
+  styles?: IThemeStyles;
 }
 
 export type Themes<TTheme extends string = string> = {

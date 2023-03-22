@@ -11,6 +11,7 @@
   min-width: 50px;
   padding: .33rem .2rem;
   text-align: center;
+  border: none;
 }
 
 .filter-sep {
@@ -20,4 +21,8 @@
 
 .form-control {
   min-width: 50px;
+}
+
+.filter-field {
+  border: none;
 }

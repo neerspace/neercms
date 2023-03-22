@@ -12,14 +12,10 @@
 
 h2 {
   margin-bottom: 0;
+  font-weight: normal;
 }
 
 .right-content {
   display: flex;
   flex-direction: row;
-}
-
-p[dimmed] {
-  display: inline;
-  color: var(--c-text-dim);
 }

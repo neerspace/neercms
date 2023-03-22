@@ -1,18 +1,18 @@
 <nc-main-header pageTitle="Article Localization: {{model.status}}">
-  <button nc-icon-button
+  <button ncButton
           [icon]="locked ? 'la-lock' : 'la-unlock'"
           variant="secondary"
           (onclick)="locked = !locked">
     {{locked ? 'Locked' : 'Unlocked'}}
   </button>
-  <button nc-icon-button
+  <button ncButton
           icon="la-ban"
           variant="danger"
           [disabled]="locked"
           (onclick)="articleService.delete(model.id)">
     Delete
   </button>
-  <button nc-icon-button
+  <button ncButton
           icon="la-save"
           variant="success"
           [disabled]="locked"
@@ -29,16 +29,16 @@
     <nc-fieldset size="small">
       <nc-number-field label="ID"
                         controlName="id"
-                        [disabled]="true"
+                        [disabled]="locked"
                         [allowCopy]="true"></nc-number-field>
       <nc-text-field label="Language Code"
                       controlName="languageCode"
-                      [disabled]="true"
+                      [disabled]="locked"
                       [allowCopy]="true"></nc-text-field>
       <nc-date-field label="Created At"
                       controlName="created"
-                      type="date-time"
-                      [disabled]="true"></nc-date-field>
+                      format="date-range"
+                      [disabled]="locked"></nc-date-field>
 
     </nc-fieldset>
     <hr />
@@ -46,10 +46,10 @@
 
       <nc-text-field label="Views"
                       controlName="views"
-                      [disabled]="true"></nc-text-field>
+                      [disabled]="locked"></nc-text-field>
       <nc-text-field label="Rating"
                       controlName="rate"
-                      [disabled]="true"></nc-text-field>
+                      [disabled]="locked"></nc-text-field>
     </nc-fieldset>
     <hr />
     <nc-fieldset size="large">

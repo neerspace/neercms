@@ -1,7 +1,7 @@
 import { Component, Injector, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { DateTimeMode } from 'neercms/form/types';
 import { DateTime } from 'luxon';
+import { DateTimeMode } from 'neercms/form/types';
 import { FieldBaseComponent } from '../field-base.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { FieldBaseComponent } from '../field-base.component';
   styleUrls: ['../field-shared.scss', './date-field.component.scss'],
 })
 export class DateFieldComponent extends FieldBaseComponent {
-  @Input() type: DateTimeMode = 'date';
+  @Input() format: DateTimeMode = 'date';
   @Input() controlEndName?: string;
 
   date!: DateTime;

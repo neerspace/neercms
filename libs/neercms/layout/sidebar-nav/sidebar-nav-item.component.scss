@@ -19,23 +19,27 @@ i, .nav-image {
 }
 
 .nav-item {
-  color: var(--c-text);
+  color: var(--sidebar-color);
   transition: background-color .05s ease;
 
   &.active {
-    background-color: var(--c-bg-2);
+    color: var(--sidebar-active-color);
+    background-color: var(--sidebar-active-bg);
   }
 
   &:hover {
-    background-color: var(--c-primary);
+    background-color: var(--primary);
   }
 }
 
 .nav-group-header {
+  --accordion-btn-icon: var(--sidebar-menu-icon);
+  --accordion-btn-active-icon: var(--sidebar-menu-icon);
+
   min-height: 42px;
   padding: .5rem 1rem;
   background-color: transparent;
-  color: var(--c-text);
+  color: var(--sidebar-color);
   border-bottom-color: transparent;
 
   &:not(.inverse) {

@@ -1,32 +1,38 @@
 .nav-tabs {
   display: flex;
-  gap: .25rem;
+  gap: 2px;
   align-items: flex-end;
+  padding-top: 7px;
 }
 
 .tab {
   button {
-    background-color: var(--c-bg-2);
-    padding: .5rem .5rem .6rem 1rem;
-    margin-top: .5rem;
-    color: var(--c-text);
-    border-width: 1.5px;
-    transition: padding-top .1s ease, margin-top .1s ease;
+    background-color: var(--tabs-inactive-bg);
+    padding: .4rem .5rem .4rem 1rem;
+    margin-top: .6rem;
+    color: var(--tabs-inactive-color);
+    border-width: 0;
+    transition: padding .1s ease, margin .1s ease;
+  }
+
+  i {
+    margin-left: .25rem;
   }
 }
 
 .tab-close {
-  color: var(--c-text);
+  color: var(--text);
   text-align: right;
   cursor: pointer;
 }
 
 li.active {
   button {
-    background-color: var(--c-bg-4);
-    color: var(--c-text);
-    padding-top: 1rem;
+    background-color: var(--tabs-active-bg);
+    color: var(--tabs-active-color);
+    padding-top: .6rem;
+    padding-bottom: .8rem;
     margin-top: 0;
-    transition: padding-top .1s ease, margin-top .1s ease;
+    transition: padding .1s ease, margin .1s ease;
   }
 }

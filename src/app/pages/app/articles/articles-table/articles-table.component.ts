@@ -1,9 +1,10 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { TabsComponent } from 'neercms/core';
+import { ModalsService } from 'neercms/services/viewport';
 import { SplitBaseComponent } from 'neercms/split';
 import { DataTableComponent } from 'neercms/table';
 import { ColumnInfo, IFiltered, IFilterInfo } from 'neercms/table/types';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { articleColumns } from '../article-columns';
 import { ArticleService } from '../article.service';
 
@@ -24,7 +25,10 @@ export class ArticlesTableComponent extends SplitBaseComponent<any> implements O
   hideTable = false;
   showFilters: boolean = false;
 
-  constructor(public readonly articleService: ArticleService) {
+  constructor(
+    public readonly articleService: ArticleService,
+    public readonly modals: ModalsService,
+  ) {
     super('articles');
     this.columns = articleColumns(this);
   }
@@ -32,7 +36,15 @@ export class ArticlesTableComponent extends SplitBaseComponent<any> implements O
   ngOnInit(): void {}
 
   fetchFilter(params: IFilterInfo): Observable<IFiltered<any>> {
-    return this.articleService.filter(params);
+    return this.articleService.filter(params).pipe(
+      tap(res => {
+        setTimeout(() => {
+          this.onArticleDetails(res.data![0]);
+          this.onArticleDetails(res.data![1]);
+          this.onArticleDetails(res.data![2]);
+        }, 300);
+      }),
+    );
   }
 
   onArticleDetails(model: any) {

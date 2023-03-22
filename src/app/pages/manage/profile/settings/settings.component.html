@@ -1,6 +1,6 @@
 <nc-main-header short="true"
                 pageTitle="Admin Panel Settings">
-  <button nc-icon-button
+  <button ncButton
           icon="la-save"
           variant="success"
           [disabled]="false"
@@ -17,6 +17,23 @@
       <nc-select-field label="Color Theme"
                        controlName="themeName"
                        [options]="themes"></nc-select-field>
+      <nc-text-field label="Text Field"
+                     controlName="text"></nc-text-field>
+      <nc-number-field label="Number Field"
+                       controlName="number"
+                       format="float(2)"></nc-number-field>
+      <nc-password-field label="Password Field"
+                         controlName="password"></nc-password-field>
+      <nc-date-field label="Date Range Field"
+                     controlName="datetime"
+                     format="date-range"></nc-date-field>
+      <nc-text-area-field label="Text Area"
+                          controlName="textarea"></nc-text-area-field>
+
+      <div class="sbtn">
+        <button ncButton (click)="settingsService.form.get('themeName')!.setValue('dark')">Dark</button>
+        <button ncButton (click)="settingsService.form.get('themeName')!.setValue('light')">Light</button>
+      </div>
     </nc-fieldset>
   </form>
 

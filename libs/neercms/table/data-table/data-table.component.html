@@ -115,8 +115,9 @@
                      [(sequence)]="columnSequence"
                      [(columns)]="columns"></nc-column-chooser>
 
-  <nc-page-size *ngIf="data && total > pageSize"
+  <nc-page-size *ngIf="data && total > pageSizeOptions[0]"
                 [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
                 (pageSizeChange)="changePageSize($event)"></nc-page-size>
 
   <div class="page-indicator">{{pageIndicatorText}}</div>
