@@ -78,6 +78,24 @@ $input-disabled-bg: $gray-600;
   --primary-alt: #{lighten($primary, 7%)};
   --button-color: #{$black};
   --button-hover-color: #{$white};
+  --shadow-color: #{$gray-700};
+}
+
+.dropdown-menu {
+  --dropdown-bg: #{$gray-700};
+  --dropdown-link-color: #{$black};
+  --dropdown-link-hover-color: #{$black};
+  --dropdown-link-hover-bg: #{$gray-900};
+}
+
+.dropdown-button {
+  --btn-bg: #{$gray-600};
+  --btn-hover-bg: #{$gray-700};
+  --btn-active-bg: #{$gray-700};
+  --btn-active-color: #{$black};
+  --btn-hover-color: #{$black};
+  --btn-hover-border-color: #{$gray-400};
+  --btn-active-border-color: #{$gray-400};
 }
 
 .dropdown {
@@ -94,10 +112,10 @@ nc-sidebar {
 }
 
 table {
-  --table-bg: var(--gray-400);
+  --table-bg: #{$gray-400};
   --table-header-color: #{$white};
-  --table-header-bg: var(--gray-100);
-  --table-header-hover-bg: var(--primary);
+  --table-header-bg: #{$gray-100};
+  --table-header-hover-bg: #{$primary};
   //--table-row-bg: var(--gray-700);
 
   --table-btn-bg: #{$gray-600};
@@ -123,4 +141,8 @@ form {
 .flatpickr-calendar {
   --picker-bg: #{$gray-900};
   --picker-selected-color: #{$white};
+}
+
+button.btn:not(.btn-outline):not(.dropdown-button) {
+  color: #{$white};
 }

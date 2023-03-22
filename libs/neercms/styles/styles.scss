@@ -86,17 +86,4 @@ button.btn, span.btn, a {
   margin-left: -20px;
 }
 
-
-.btn.btn-secondary {
-  &:hover {
-    --btn-hover-border-color: var(--gray-400);
-    --btn-hover-color: var(--black);
-  }
-
-  &.show {
-    --btn-active-border-color: var(--gray-400);
-  }
-}
-
-
 @import 'bootstrap/scss/bootstrap';

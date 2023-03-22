@@ -29,7 +29,7 @@ $cyan: #0dcaf0;
 
 // Theme colors
 $primary: $purple;
-$secondary: $gray-600;
+$secondary: $gray-500;
 $success: $green;
 $info: $cyan;
 $warning: $orange;
@@ -54,19 +54,31 @@ $body-bg: $gray-700;
 $body-color: $white;
 $dropdown-link-color: $white;
 
+$btn-close-color: $white;
+$btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>");
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$black}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$btn-border-width: 2px;
+
+$modal-content-bg: $gray-700;
+//$modal-content-color: $white;
+//$modal-header-border-color: $white;
+
+$toast-color: $white;
+$input-focus-bg: $gray-600;
+$input-disabled-bg: $gray-500;
+
 @import 'bootstrap/scss/bootstrap';
 
 
 :root {
   //--bg-transparent: rgba(102, 112, 122, 0.33);
   --text: #{$white};
-  --text-dim: #{$gray-600};
+  --text-dim: #{$gray-300};
   --text-alt: #{$black};
   --primary-alt: #{lighten($primary, 7%)};
-}
-
-nc-dropdown {
-  --dropdown-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"))};
+  --button-color: #{$black};
+  --button-hover-color: #{$white};
+  --shadow-color: #{$gray-700};
 }
 
 nc-sidebar {
@@ -75,5 +87,58 @@ nc-sidebar {
   --sidebar-color: #{$white};
   --sidebar-active-color: #{$white};
   --sidebar-active-bg: #{$gray-700};
-  --sidebar-menu-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"))};
+  --sidebar-menu-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$gray-100}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"))};
+}
+
+.dropdown-menu {
+  --dropdown-bg: #{$gray-600};
+  --dropdown-link-color: #{$white};
+  --dropdown-link-hover-color: #{$white};
+  --dropdown-link-hover-bg: #{$gray-700};
+}
+
+.dropdown-button {
+  --btn-bg: #{$gray-600};
+  --btn-hover-bg: #{$gray-700};
+  --btn-active-bg: #{$gray-700};
+  --btn-active-color: #{$white};
+  --btn-hover-color: #{$white};
+  --btn-hover-border-color: #{$gray-300};
+  --btn-active-border-color: #{$gray-300};
+}
+
+.dropdown {
+  --dropdown-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$gray-100}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>"))};
+}
+
+table {
+  --table-bg: #{$gray-400};
+  --table-header-color: #{$white};
+  --table-header-bg: #{$gray-800};
+  --table-header-hover-bg: #{$primary};
+  //--table-row-bg: var(--gray-700);
+
+  --table-btn-bg: #{$gray-600};
+  --table-btn-color: #{$white};
+  --table-btn-hover-bg: #{$gray-400};
+  --table-btn-hover-color: #{$white};
+}
+
+nc-tabs {
+  --tabs-inactive-color: #{$white};
+  --tabs-inactive-bg: #{$gray-600};
+  --tabs-active-color: #{$white};
+  --tabs-active-bg: #{$primary};
+}
+
+form {
+  --input-bg: #{$gray-600};
+  --input-color: #{$white};
+  --input-border-color: #{$gray-500};
+  --input-disabled-bg: #{$gray-700};
+}
+
+.flatpickr-calendar {
+  --picker-bg: #{$gray-600};
+  --picker-selected-color: #{$white};
 }

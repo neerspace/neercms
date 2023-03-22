@@ -31,11 +31,6 @@
               "src/styles/line-awesome.min.css",
               "src/styles.scss",
               {
-                "input": "libs/neercms/styles/themes/nethub-dark.scss",
-                "bundleName": "dark",
-                "inject": false
-              },
-              {
                 "input": "libs/neercms/styles/themes/bootstrap-light.scss",
                 "bundleName": "bootstrap-light",
                 "inject": false
