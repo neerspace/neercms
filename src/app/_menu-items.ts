@@ -11,8 +11,24 @@ export const items: MenuItems = [
     iconKind: 'lar',
     icon: 'la-star',
     children: [
-      { routerLink: '/users', text: 'Users', icon: 'la-user-friends' },
-      { routerLink: '/articles', text: 'Articles', icon: 'la-book' },
+      {
+        routerLink: '/users',
+        text: 'Users',
+        icon: 'la-user-friends',
+        indicator: {
+          variant: 'primary',
+          value: 10,
+        },
+      },
+      {
+        routerLink: '/articles',
+        text: 'Articles',
+        icon: 'la-book',
+        indicator: {
+          variant: 'danger',
+          value: 199,
+        },
+      },
     ],
   },
   {

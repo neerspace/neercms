@@ -29,6 +29,10 @@ i, .nav-image {
 
   &:hover {
     background-color: var(--primary);
+
+    .nav-indicator {
+      background-color: var(--sidebar-bg);
+    }
   }
 }
 
@@ -62,8 +66,51 @@ i, .nav-image {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
 }
 
 .nav-group .nav-link {
   padding: .5rem 0 .5rem 2rem;
+}
+
+.nav-indicator {
+  align-self: self-start;
+  display: block;
+  line-height: 16px;
+  //vertical-align: super;
+  font-size: .75rem;
+  background-color: var(--primary);
+  //border-radius: 5px;
+  padding: .08rem .2rem;
+  margin: 0 .75rem 0 0;
+
+  &[data-color=secondary] {
+    background-color: var(--secondary);
+  }
+
+  &[data-color=light] {
+    color: var(--text-alt);
+    background-color: var(--light);
+  }
+
+  &[data-color=dark] {
+    background-color: var(--dark);
+  }
+
+  &[data-color=info] {
+    color: var(--text-alt);
+    background-color: var(--info);
+  }
+
+  &[data-color=success] {
+    background-color: var(--success);
+  }
+
+  &[data-color=warning] {
+    background-color: var(--warning);
+  }
+
+  &[data-color=danger] {
+    background-color: var(--danger);
+  }
 }

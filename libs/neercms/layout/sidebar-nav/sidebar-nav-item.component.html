@@ -18,8 +18,15 @@
              [state]="subItem.stateData"
              routerLinkActive="active"
              class="nav-item nav-link">
-            <i *ngIf="subItem.icon" class="{{subItem.iconKind ?? 'las'}} {{subItem.icon}}"></i>
-            {{subItem.text}}
+            <span>
+              <i *ngIf="subItem.icon" class="{{subItem.iconKind ?? 'las'}} {{subItem.icon}}"></i>
+              {{subItem.text}}
+            </span>
+            <span *ngIf="subItem.indicator"
+                  class="nav-indicator"
+                  [attr.data-color]="subItem.indicator.variant">
+              {{subItem.indicator.value}}
+            </span>
           </a>
         </ng-container>
       </div>
@@ -38,20 +45,26 @@
      [state]="item.stateData"
      routerLinkActive="active"
      class="nav-item nav-link">
-    <i *ngIf="!!item.icon" class="{{item.iconKind ?? 'las'}} {{item.icon}}"></i>
-    {{item.text}}
+    <span>
+      <i *ngIf="!!item.icon" class="{{item.iconKind ?? 'las'}} {{item.icon}}"></i>
+      {{item.text}}
+    </span>
+    <span *ngIf="item.indicator"
+          class="nav-indicator"
+          [attr.data-color]="item.indicator.variant">
+      {{item.indicator.value}}
+    </span>
   </a>
 </ng-template>
 
 <ng-template #accordionButton>
-  <button
-    type="button"
-    class="accordion-button nav-item nav-group-header collapsed"
-    aria-expanded="false"
-    data-bs-toggle="collapse"
-    [class.inverse]="inverse"
-    attr.data-bs-target="#navgrp-{{getKey(item.text)}}"
-    attr.aria-controls="navgrp-{{getKey(item.text)}}">
+  <button type="button"
+          class="accordion-button nav-item nav-group-header collapsed"
+          aria-expanded="false"
+          data-bs-toggle="collapse"
+          [class.inverse]="inverse"
+          attr.data-bs-target="#navgrp-{{getKey(item.text)}}"
+          attr.aria-controls="navgrp-{{getKey(item.text)}}">
     <i *ngIf="!!item.icon" class="{{item.iconKind ?? 'las'}} {{item.icon}}"></i>
     <img *ngIf="item.image"
          [src]="item.image"
