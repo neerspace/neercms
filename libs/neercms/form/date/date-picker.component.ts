@@ -10,7 +10,7 @@ const maxDate = new Date('2036-01-01');
 type NullableDateTime = DateTime | null;
 
 @Component({
-  selector: 'input[nc-date-picker]',
+  selector: 'input[ncDatePicker]',
   template: ``,
 })
 export class DatePickerComponent implements AfterViewInit {

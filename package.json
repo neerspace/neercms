@@ -1,7 +1,7 @@
 {
   "name": "neercmslib",
   "version": "0.0.0",
-  "private": false,
+  "private": true,
   "scripts": {
     "ng": "ng",
     "pkg-install": "npm install",

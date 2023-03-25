@@ -31,7 +31,9 @@
       "neercms/table": ["libs/neercms/table/public-api"],
       "neercms/table/utilities": ["libs/neercms/table/utilities/public-api"],
       "neercms/table/sieve": ["libs/neercms/table/sieve/public-api"],
-      "neercms/table/types": ["libs/neercms/table/types/public-api"]
+      "neercms/table/types": ["libs/neercms/table/types/public-api"],
+
+      "neercms/tabs": ["libs/neercms/tabs/public-api"]
     }
   },
   "exclude": []

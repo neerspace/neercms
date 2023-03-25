@@ -5,7 +5,7 @@ import { CoreComponentsModule } from 'neercms/core';
 import { FormComponentsModule } from 'neercms/form';
 import { NgxMaskModule } from 'ngx-mask';
 import { ColumnChooserComponent } from './column-chooser/column-chooser.component';
-import { CustomColumnDirective } from './custom-column.directive';
+import { ColumnTemplateDirective } from './column-template.directive';
 import { DataTableComponent } from './data-table/data-table.component';
 import { TableFilterFieldComponent } from './filter-field/table-filter-field.component';
 import { TablePageSizeComponent } from './page-size-select/table-page-size.component';
@@ -18,9 +18,9 @@ import { TablePaginationComponent } from './pagination/table-pagination.componen
     TablePageSizeComponent,
     TableFilterFieldComponent,
     ColumnChooserComponent,
-    CustomColumnDirective,
+    ColumnTemplateDirective,
   ],
-  exports: [DataTableComponent, CustomColumnDirective],
+  exports: [DataTableComponent, ColumnTemplateDirective],
   imports: [
     CommonModule,
     CoreComponentsModule,

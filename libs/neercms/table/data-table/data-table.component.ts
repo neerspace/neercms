@@ -20,7 +20,7 @@ import {
   IFilterParams,
 } from 'neercms/table/types';
 import { debounceTime, distinctUntilChanged } from 'rxjs';
-import { CustomColumnDirective } from '../custom-column.directive';
+import { ColumnTemplateDirective } from '../column-template.directive';
 import { TablePaginationComponent } from '../pagination/table-pagination.component';
 
 @Component({
@@ -31,8 +31,8 @@ import { TablePaginationComponent } from '../pagination/table-pagination.compone
 export class DataTableComponent<T> implements OnInit, AfterViewInit {
   @ViewChild('pagination') pagination!: TablePaginationComponent;
 
-  @ContentChildren(CustomColumnDirective, { descendants: true })
-  customColumnTemplates!: QueryList<CustomColumnDirective<T>>;
+  @ContentChildren(ColumnTemplateDirective, { descendants: true })
+  customColumnTemplates!: QueryList<ColumnTemplateDirective<T>>;
 
   @Input() defaultSorting: string | null = 'id';
   @Input() columns: ColumnInfo[] = [];
@@ -162,7 +162,7 @@ export class DataTableComponent<T> implements OnInit, AfterViewInit {
     });
   }
 
-  getCustomColumnByName(templateName: string): CustomColumnDirective<T> {
+  getCustomColumnByName(templateName: string): ColumnTemplateDirective<T> {
     const customColumn = this.customColumnTemplates.find(x => x.templateName === templateName);
     if (!customColumn) {
       throw new DataTableError(`Custom column not found: "${templateName}"`);

@@ -48,21 +48,21 @@
           <!--  </button>-->
           <!--</ng-container>-->
 
-          <ng-container *appCustomColumn="'article_edit'; value as val; object as obj">
+          <ng-container *ncColumnTemplate="'article_edit'; value as val; object as obj">
             <button class="btn btn-secondary neutral general-button"
                     (click)="onArticleDetails(obj)">
               <span class="text">Edit</span>
             </button>
           </ng-container>
 
-          <ng-container *appCustomColumn="'article_languageCode'; value as val; object as obj">
+          <ng-container *ncColumnTemplate="'article_languageCode'; value as val; object as obj">
             <button class="btn neutral flag-button disabled"
                     disabled>
               <span class="text">{{obj.languageCode?.toUpperCase()}}</span>
             </button>
           </ng-container>
 
-          <ng-container *appCustomColumn="'article_status'; value as val; object as obj">
+          <ng-container *ncColumnTemplate="'article_status'; value as val; object as obj">
             <span class="check check-{{val.toLowerCase()}}">{{val}}</span>
           </ng-container>
 
@@ -73,11 +73,15 @@
 
     <as-split-area [size]="splitSizes[1]">
       <div class="split-area-content">
-        <nc-tabs></nc-tabs>
-        <ng-template let-data="data"
-                     #localizationForm>
-          <app-article-form [model]="data"></app-article-form>
-        </ng-template>
+        <nc-tabs>
+          <ng-container *ncTabTemplate="'article'; let data">
+            <app-article-form [model]="data"></app-article-form>
+          </ng-container>
+        </nc-tabs>
+        <!--<ng-template let-data="data"-->
+        <!--             #localizationForm>-->
+        <!--  <app-article-form [model]="data"></app-article-form>-->
+        <!--</ng-template>-->
       </div>
     </as-split-area>
 

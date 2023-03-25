@@ -6,7 +6,7 @@ export * from './date/date-field.component';
 export * from './date/date-picker.component';
 export * from './date/date-range-picker.component';
 export * from './form-content/form-content.component';
-export * from './layout/form-layout.component';
+export * from './form/form.component';
 export * from './number/number-field.component';
 export * from './password/password-field.component';
 export * from './select/select-field.component';

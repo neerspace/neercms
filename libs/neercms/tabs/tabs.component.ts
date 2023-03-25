@@ -8,6 +8,7 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
+import { TabTemplateDirective } from './tab-template.directive';
 import { TabComponent } from './tab/tab.component';
 
 @Component({
@@ -16,6 +17,8 @@ import { TabComponent } from './tab/tab.component';
   styleUrls: ['./tabs.component.scss'],
 })
 export class TabsComponent implements AfterContentInit {
+  @ContentChildren(TabTemplateDirective) templates: QueryList<TabTemplateDirective> =
+    new QueryList<TabTemplateDirective>();
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent> = new QueryList<TabComponent>();
   @ViewChild('container', { read: ViewContainerRef }) dynamicTabsContainer!: ViewContainerRef;
   dynamicTabs: TabComponent[] = [];
@@ -42,7 +45,7 @@ export class TabsComponent implements AfterContentInit {
     tab.active = true;
   }
 
-  openTab(key: string, title: string, template: TemplateRef<any>, data: any, isCloseable = true) {
+  openTab(key: string, title: string, templateName: string, data: any, isCloseable = true) {
     if (this.openedTabKeys.includes(key)) {
       let tab = this.tabs.find(x => x.key === key) ?? this.dynamicTabs.find(x => x.key === key);
       if (tab) {
@@ -57,8 +60,8 @@ export class TabsComponent implements AfterContentInit {
 
     instance.title = title;
     instance.key = key;
-    instance.template = template;
-    instance.dataContext = data;
+    instance.template = this.templates.find(x => x.templateName === templateName)!.templateRef;
+    instance.data = data;
     instance.isCloseable = isCloseable;
     instance.active = true;
 

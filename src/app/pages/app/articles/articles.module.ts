@@ -7,6 +7,7 @@ import { CoreComponentsModule } from 'neercms/core';
 import { FormComponentsModule } from 'neercms/form';
 import { LayoutComponentsModule } from 'neercms/layout';
 import { TableComponentsModule } from 'neercms/table';
+import { TabComponentsModule } from 'neercms/tabs';
 import { ArticleFormComponent } from './article-form/article-form.component';
 import { ArticlesTableComponent } from './articles-table/articles-table.component';
 
@@ -26,6 +27,7 @@ const routes: Routes = [{ path: '', component: ArticlesTableComponent }];
     FormComponentsModule,
     LayoutComponentsModule,
     TableComponentsModule,
+    TabComponentsModule,
   ],
   exports: [ArticleFormComponent],
 })

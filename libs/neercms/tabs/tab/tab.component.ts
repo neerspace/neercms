@@ -11,5 +11,5 @@ export class TabComponent {
   @Input() isCloseable = false;
   @Input() key!: string;
   @Input() template!: TemplateRef<any>;
-  @Input() dataContext!: any;
+  @Input() data!: any;
 }

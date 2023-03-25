@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { TabsComponent } from 'neercms/core';
+import { TabsComponent } from 'neercms/tabs';
 import { ModalsService } from 'neercms/services/viewport';
 import { SplitBaseComponent } from 'neercms/split';
 import { DataTableComponent } from 'neercms/table';
@@ -15,7 +15,7 @@ import { ArticleService } from '../article.service';
   providers: [ArticleService],
 })
 export class ArticlesTableComponent extends SplitBaseComponent<any> implements OnInit {
-  @ViewChild(TabsComponent) tabsComponent!: TabsComponent;
+  @ViewChild(TabsComponent) tabs!: TabsComponent;
   @ViewChild('table') table!: DataTableComponent<any>;
   @ViewChild('articleForm') articleTemplate!: TemplateRef<any>;
   @ViewChild('localizationForm') localizationTemplate!: TemplateRef<any>;
@@ -49,12 +49,7 @@ export class ArticlesTableComponent extends SplitBaseComponent<any> implements O
 
   onArticleDetails(model: any) {
     const tabTitle = `${model.articleSetId} | ${model.languageCode.toUpperCase()}`;
-    this.tabsComponent.openTab(
-      this.getArticleId(model),
-      tabTitle,
-      this.localizationTemplate,
-      model,
-    );
+    this.tabs.openTab(this.getArticleId(model), tabTitle, 'article', model);
   }
 
   getArticleId(model: any): string {

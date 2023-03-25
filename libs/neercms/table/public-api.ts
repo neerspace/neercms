@@ -4,5 +4,5 @@ export * from './filter-field/table-filter-field.component';
 export * from './page-size-select/table-page-size.component';
 export * from './pagination/table-pagination.component';
 
-export * from './custom-column.directive';
+export * from './column-template.directive';
 export * from './table-components.module';

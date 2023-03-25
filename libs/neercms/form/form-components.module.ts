@@ -11,7 +11,7 @@ import { DateFieldComponent } from './date/date-field.component';
 import { DatePickerComponent } from './date/date-picker.component';
 import { DateRangePickerComponent } from './date/date-range-picker.component';
 import { FormContentComponent } from './form-content/form-content.component';
-import { FormLayoutComponent } from './layout/form-layout.component';
+import { FormComponent } from './form/form.component';
 import { NumberFieldComponent } from './number/number-field.component';
 import { PasswordFieldComponent } from './password/password-field.component';
 import { SelectFieldComponent } from './select/select-field.component';
@@ -22,7 +22,7 @@ import { TextFieldComponent } from './text/text-field.component';
 
 @NgModule({
   declarations: [
-    FormLayoutComponent,
+    FormComponent,
     NotFoundComponent,
     FieldMessageComponent,
 
@@ -44,7 +44,7 @@ import { TextFieldComponent } from './text/text-field.component';
     CheckboxFieldComponent,
   ],
   exports: [
-    FormLayoutComponent,
+    FormComponent,
 
     DateFieldComponent,
     TextFieldComponent,
