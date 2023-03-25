@@ -55,7 +55,7 @@ export class ColumnChooserComponent implements OnChanges {
     } else {
       this.sequence = this.columns.filter(x => !x.hidden).map(x => x.key!);
 
-      setTimeout(() => this.sequenceChange.emit(this.sequence), 50);
+      setTimeout(() => this.sequenceChange.emit(this.sequence), 200);
     }
 
     this.optionColumns = this.columns.filter(x => x.key && x.title);

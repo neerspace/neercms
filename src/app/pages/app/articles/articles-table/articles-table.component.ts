@@ -1,9 +1,8 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { TabsComponent } from 'neercms/tabs';
+import { Component, ViewChild } from '@angular/core';
 import { ModalsService } from 'neercms/services/viewport';
-import { SplitBaseComponent } from 'neercms/split';
 import { DataTableComponent } from 'neercms/table';
 import { ColumnInfo, IFiltered, IFilterInfo } from 'neercms/table/types';
+import { TabsComponent } from 'neercms/tabs';
 import { Observable, tap } from 'rxjs';
 import { articleColumns } from '../article-columns';
 import { ArticleService } from '../article.service';
@@ -14,12 +13,9 @@ import { ArticleService } from '../article.service';
   styleUrls: ['./articles-table.component.scss'],
   providers: [ArticleService],
 })
-export class ArticlesTableComponent extends SplitBaseComponent<any> implements OnInit {
+export class ArticlesTableComponent {
   @ViewChild(TabsComponent) tabs!: TabsComponent;
-  @ViewChild('table') table!: DataTableComponent<any>;
-  @ViewChild('articleForm') articleTemplate!: TemplateRef<any>;
-  @ViewChild('localizationForm') localizationTemplate!: TemplateRef<any>;
-  @ViewChild('localizationsColumn') localizationsColumnTemplate!: TemplateRef<any>;
+  @ViewChild('table') table: DataTableComponent<any> = { loading: true } as any;
 
   columns: ColumnInfo[];
   hideTable = false;
@@ -29,11 +25,8 @@ export class ArticlesTableComponent extends SplitBaseComponent<any> implements O
     public readonly articleService: ArticleService,
     public readonly modals: ModalsService,
   ) {
-    super('articles');
     this.columns = articleColumns(this);
   }
-
-  ngOnInit(): void {}
 
   fetchFilter(params: IFilterInfo): Observable<IFiltered<any>> {
     return this.articleService.filter(params).pipe(
@@ -42,7 +35,7 @@ export class ArticlesTableComponent extends SplitBaseComponent<any> implements O
           this.onArticleDetails(res.data![0]);
           this.onArticleDetails(res.data![1]);
           this.onArticleDetails(res.data![2]);
-        }, 300);
+        }, 100);
       }),
     );
   }

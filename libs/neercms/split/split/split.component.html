@@ -1,0 +1,16 @@
+<as-split class="split-view"
+          unit="percent"
+          direction="vertical"
+          [gutterSize]="4"
+          (dragEnd)="resize($event.sizes)">
+  <as-split-area [size]="sizes[0]">
+    <div class="split-area-content">
+      <ng-container [ngTemplateOutlet]="splitAreaOne.templateRef"></ng-container>
+    </div>
+  </as-split-area>
+  <as-split-area [size]="sizes[1]">
+    <div class="split-area-content">
+      <ng-container [ngTemplateOutlet]="splitAreaTwo.templateRef"></ng-container>
+    </div>
+  </as-split-area>
+</as-split>

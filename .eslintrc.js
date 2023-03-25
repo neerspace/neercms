@@ -20,11 +20,11 @@ module.exports = {
         'max-len': ['error', { code: 140 }],
         '@angular-eslint/directive-selector': [
           'error',
-          { type: 'attribute', prefix: 'app', style: 'camelCase' },
+          { type: 'attribute', prefix: 'nc', style: 'camelCase' },
         ],
         '@angular-eslint/component-selector': [
           'off',
-          { type: 'element', prefix: 'app', style: 'kebab-case' },
+          { type: 'element', prefix: 'nc', style: 'kebab-case' },
         ],
         '@angular-eslint/no-host-metadata-property': ['error', { allowStatic: true }],
       },
