@@ -3,13 +3,14 @@ import {
   Component,
   ContentChildren,
   QueryList,
-  TemplateRef,
   Type,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { TabTemplateDirective } from './tab-template.directive';
-import { TabComponent } from './tab/tab.component';
+import { TabTemplateDirective } from '../tab-template.directive';
+import { TabComponent } from '../tab/tab.component';
+
+export type TabKey = string | number;
 
 @Component({
   selector: 'nc-tabs',
@@ -22,7 +23,7 @@ export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent> = new QueryList<TabComponent>();
   @ViewChild('container', { read: ViewContainerRef }) dynamicTabsContainer!: ViewContainerRef;
   dynamicTabs: TabComponent[] = [];
-  openedTabKeys: string[] = [];
+  openedTabKeys: TabKey[] = [];
 
   ngAfterContentInit(): void {
     let activeTabs = this.tabs.filter(tab => tab.active);
@@ -45,7 +46,16 @@ export class TabsComponent implements AfterContentInit {
     tab.active = true;
   }
 
-  openTab(key: string, title: string, templateName: string, data: any, isCloseable = true) {
+  openDefaultTab(key: TabKey, title: string, data: any, isCloseable = true) {
+    const defaultTemplate = this.templates.get(0);
+    if (!defaultTemplate) {
+      throw new Error('No templates found.');
+    }
+
+    this.openTab(key, title, defaultTemplate.templateName, data, isCloseable);
+  }
+
+  openTab(key: TabKey, title: string, templateName: string, data: any, isCloseable = true) {
     if (this.openedTabKeys.includes(key)) {
       let tab = this.tabs.find(x => x.key === key) ?? this.dynamicTabs.find(x => x.key === key);
       if (tab) {

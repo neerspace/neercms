@@ -17,6 +17,7 @@ export class ArticleService extends FormServiceBase {
       created: ['', []],
       views: ['', []],
       rate: ['', []],
+      selectValue: ['', []],
     });
   }
 

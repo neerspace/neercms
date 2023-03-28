@@ -22,6 +22,7 @@ export type FormBaseChanges = SimpleChanges & { disabled: SimpleChange };
 export abstract class FieldBaseComponent implements OnInit, OnChanges {
   @Input() label!: string;
   @Input() controlName!: string;
+  @Input() controlUnlink: BoolInput = false;
   @Input() required: BoolInput = false;
   @Input() disabled: BoolInput = false;
   @Input() allowCopy: BoolInput = false;
@@ -41,6 +42,9 @@ export abstract class FieldBaseComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     // this.formGroup.form.error
+    if (this.isTrue(this.controlUnlink)) {
+      return;
+    }
 
     this.formControl ??= this.formGroup.form.get(this.controlName) as FormControl;
     if (!this.formControl) {

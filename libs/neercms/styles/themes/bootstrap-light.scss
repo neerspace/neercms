@@ -67,6 +67,9 @@ $toast-color: $white;
 $input-focus-bg: $gray-900;
 $input-disabled-bg: $gray-600;
 
+$tooltip-bg: $gray-100;
+$tooltip-color: $white;
+
 @import 'bootstrap/scss/bootstrap';
 
 
@@ -135,7 +138,7 @@ form {
   --input-bg: #{$gray-900};
   --input-color: #{$black};
   --input-border-color: #{$gray-500};
-  --input-disabled-bg: #{$gray-700};
+  --input-disabled-bg: #{$input-disabled-bg};
 }
 
 .flatpickr-calendar {

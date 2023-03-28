@@ -4,6 +4,7 @@
   top: -.1rem;
   left: 98.5%;
   z-index: -1;
+  color: var(--tooltip-color);
 
   &.small {
     width: auto;
@@ -32,13 +33,13 @@
 
     &:before {
       border-width: .5rem;
-      border-right-color: var(--gray-500);
+      border-right-color: var(--tooltip-bg);
     }
   }
 
   .tooltip-inner {
     padding: .2rem .5rem;
-    background-color: var(--gray-500);
+    background-color: var(--tooltip-bg);
     border-right: .33rem solid var(--success);
   }
 

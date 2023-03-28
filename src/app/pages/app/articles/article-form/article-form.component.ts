@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ISelectOption } from 'neercms/form/types';
 import { ModalsService } from 'neercms/services/viewport';
 import { ArticleService } from '../article.service';
 
@@ -12,6 +13,10 @@ export class ArticleFormComponent implements OnInit {
   @Input() model!: any;
 
   locked: boolean = false;
+  options: ISelectOption[] = [
+    { key: 1, title: 'Option 1' },
+    { key: 2, title: 'Another Options' },
+  ];
 
   constructor(
     public readonly articleService: ArticleService,

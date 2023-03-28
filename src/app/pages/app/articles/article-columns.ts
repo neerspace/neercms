@@ -52,8 +52,9 @@ export function articleColumns(context: ArticlesTableComponent): ColumnInfo[] {
       title: 'Views Count',
       sortable: true,
       hideable: true,
-      filter: FilterType.optNumber,
-      numberPattern: 'integer',
+      // filter: FilterType.optNumber,
+      // numberPattern: 'integer',
+      filter: FilterType.boolDropdown,
     },
     {
       key: 'rate',

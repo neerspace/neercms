@@ -25,7 +25,7 @@ export const items: MenuItems = [
         text: 'Articles',
         icon: 'la-book',
         indicator: {
-          variant: 'danger',
+          variant: 'warning',
           value: 199,
         },
       },

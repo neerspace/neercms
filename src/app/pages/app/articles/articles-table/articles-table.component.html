@@ -64,7 +64,8 @@
     </div>
     <div *ncSplitTwo>
       <nc-tabs>
-        <ng-container *ncTabTemplate="'article'; let data">
+        <!--<ng-container *ncTabTemplate="'article'; let data">-->
+        <ng-container *ncTabTemplate="let data">
           <app-article-form [model]="data"></app-article-form>
         </ng-container>
       </nc-tabs>

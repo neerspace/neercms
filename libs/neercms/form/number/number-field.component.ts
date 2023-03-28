@@ -28,6 +28,9 @@ export class NumberFieldComponent extends FieldBaseComponent {
 
   override onChange(event?: Event) {
     super.onChange(event);
+    if (!this.formControl) {
+      return;
+    }
 
     const value = +this.formControl.value;
     if (value < this.minValue) {
@@ -38,6 +41,10 @@ export class NumberFieldComponent extends FieldBaseComponent {
   }
 
   onKeyUp(event: Event): void {
+    if (!this.formControl) {
+      return;
+    }
+
     // To avoid a float numbers math hell
     function fuckJS(n: number, inc: number): number {
       const [integer, floating] = n.toString().split('.');

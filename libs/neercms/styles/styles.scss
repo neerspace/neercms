@@ -86,4 +86,8 @@ button.btn, span.btn, a {
   margin-left: -20px;
 }
 
+.text, tbody .btn {
+  color: var(--text);
+}
+
 @import 'bootstrap/scss/bootstrap';

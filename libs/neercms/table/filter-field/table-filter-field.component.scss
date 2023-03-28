@@ -4,6 +4,10 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   margin: .1rem .05rem;
+
+  input, select {
+    border: none;
+  }
 }
 
 .filter-select {
@@ -23,6 +27,8 @@
   min-width: 50px;
 }
 
-.filter-field {
-  border: none;
+.filter-select, .filter-field {
+  &:focus {
+    z-index: 100;
+  }
 }

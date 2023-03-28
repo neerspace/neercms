@@ -7,6 +7,7 @@ export interface IMenuIndicator {
 }
 
 export interface IMenuItem {
+  key?: string;
   text: string;
   icon?: string;
   iconKind?: string;

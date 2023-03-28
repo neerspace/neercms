@@ -1,8 +1,4 @@
 {
-  "recommendations": [
-    "angular.ng-template",
-    "nrwl.angular-console",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
-  ]
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+  "recommendations": ["angular.ng-template"]
 }

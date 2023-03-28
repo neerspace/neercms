@@ -42,7 +42,8 @@ export class ArticlesTableComponent {
 
   onArticleDetails(model: any) {
     const tabTitle = `${model.articleSetId} | ${model.languageCode.toUpperCase()}`;
-    this.tabs.openTab(this.getArticleId(model), tabTitle, 'article', model);
+    // this.tabs.openTab(this.getArticleId(model), tabTitle, 'article', model);
+    this.tabs.openDefaultTab(this.getArticleId(model), tabTitle, model);
   }
 
   getArticleId(model: any): string {

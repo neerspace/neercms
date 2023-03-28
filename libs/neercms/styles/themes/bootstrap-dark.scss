@@ -7,8 +7,8 @@ $white: #fff;
 $gray-100: #D8D8D6;
 $gray-200: #a0a1a2;
 $gray-300: #7b7b80;
-$gray-400: #5c5d5e;
-$gray-500: #4e4e50;
+$gray-400: #565657;
+$gray-500: #464648;
 $gray-600: #3e3f44;
 $gray-700: #2c2e31;
 $gray-800: #1F2023;
@@ -66,6 +66,9 @@ $modal-content-bg: $gray-700;
 $toast-color: $white;
 $input-focus-bg: $gray-600;
 $input-disabled-bg: $gray-500;
+
+$tooltip-bg: $gray-500;
+$tooltip-color: $white;
 
 @import 'bootstrap/scss/bootstrap';
 
@@ -135,7 +138,7 @@ form {
   --input-bg: #{$gray-600};
   --input-color: #{$white};
   --input-border-color: #{$gray-500};
-  --input-disabled-bg: #{$gray-700};
+  --input-disabled-bg: #{$input-disabled-bg};
 }
 
 .flatpickr-calendar {

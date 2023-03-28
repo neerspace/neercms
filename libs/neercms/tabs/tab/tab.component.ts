@@ -1,4 +1,5 @@
 import { Component, Input, TemplateRef } from '@angular/core';
+import { TabKey } from '../tabs/tabs.component';
 
 @Component({
   selector: 'nc-tab',
@@ -9,7 +10,7 @@ export class TabComponent {
   @Input('tabTitle') title: string = 'title';
   @Input() active: boolean = false;
   @Input() isCloseable = false;
-  @Input() key!: string;
+  @Input() key!: TabKey;
   @Input() template!: TemplateRef<any>;
   @Input() data!: any;
 }

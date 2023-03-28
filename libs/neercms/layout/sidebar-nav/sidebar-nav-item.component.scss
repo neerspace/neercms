@@ -32,6 +32,7 @@ i, .nav-image {
 
     .nav-indicator {
       background-color: var(--sidebar-bg);
+      color: var(--white);
     }
   }
 }
@@ -104,6 +105,7 @@ i, .nav-image {
   }
 
   &[data-color=warning] {
+    //color: var(--text-alt);
     background-color: var(--warning);
   }
 

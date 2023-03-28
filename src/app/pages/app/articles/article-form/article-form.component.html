@@ -28,35 +28,43 @@
 
     <nc-fieldset size="small">
       <nc-number-field label="ID"
-                        controlName="id"
-                        [disabled]="locked"
-                        [allowCopy]="true"></nc-number-field>
+                       controlName="id"
+                       [disabled]="locked"
+                       [required]="true"
+                       [allowCopy]="true"></nc-number-field>
       <nc-text-field label="Language Code"
-                      controlName="languageCode"
-                      [disabled]="locked"
-                      [allowCopy]="true"></nc-text-field>
+                     controlName="languageCode"
+                     [disabled]="locked"
+                     [allowCopy]="true"
+                     [required]="true"
+                     [maxLength]="2"></nc-text-field>
       <nc-date-field label="Created At"
-                      controlName="created"
-                      format="date-range"
-                      [disabled]="locked"></nc-date-field>
+                     controlName="created"
+                     format="date-range"
+                     [disabled]="locked"></nc-date-field>
 
     </nc-fieldset>
-    <hr />
+    <hr/>
     <nc-fieldset size="small">
 
       <nc-text-field label="Views"
-                      controlName="views"
-                      [disabled]="locked"></nc-text-field>
+                     controlName="views"
+                     [disabled]="locked"></nc-text-field>
       <nc-text-field label="Rating"
-                      controlName="rate"
-                      [disabled]="locked"></nc-text-field>
+                     controlName="rate"
+                     [disabled]="locked"></nc-text-field>
+      <nc-select-field label="Select sample"
+                       controlName="selectValue"
+                       [options]="options"
+                       [disabled]="locked">
+      </nc-select-field>
     </nc-fieldset>
-    <hr />
+    <hr/>
     <nc-fieldset size="large">
       <nc-text-area-field label="Title"
-                           controlName="title"
-                           size="small"
-                           [disabled]="locked"></nc-text-area-field>
+                          controlName="title"
+                          size="small"
+                          [disabled]="locked"></nc-text-area-field>
     </nc-fieldset>
 
   </form>
