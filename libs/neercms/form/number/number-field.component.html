@@ -2,7 +2,7 @@
   <label *ngIf="label" [for]="controlName" class="col-sm-4 col-form-label">
     {{label}}<sup *ngIf="required" class="required-mark">*</sup>
   </label>
-  <div class="col-sm-8">
+  <div class="col-sm-8 position-relative">
     <input #input
            [formControl]="formControl"
            [id]="controlName"

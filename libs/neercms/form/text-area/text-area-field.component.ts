@@ -1,4 +1,4 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Size } from 'neercms/form/types';
 import { FieldBaseComponent } from '../field-base.component';
 
@@ -10,8 +10,4 @@ import { FieldBaseComponent } from '../field-base.component';
 export class TextAreaFieldComponent extends FieldBaseComponent {
   @Input() size: Size = 'medium';
   @Input() maxLength: number = -1;
-
-  constructor(injector: Injector) {
-    super(injector);
-  }
 }

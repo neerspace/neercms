@@ -1,8 +1,4 @@
-@import 'mixins';
-
-nc-main-header .btn {
-  margin-left: .5rem;
-}
+@import "mixins";
 
 input:-webkit-autofill,
 textarea:-webkit-autofill,
@@ -28,7 +24,7 @@ select:-webkit-autofill {
   position: relative;
 
   &:before {
-    content: '';
+    content: "";
     display: block;
     border-radius: 50%;
     position: absolute;

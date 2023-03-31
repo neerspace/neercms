@@ -1,4 +1,4 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DateTime } from 'luxon';
 import { DateTimeMode } from 'neercms/form/types';
@@ -15,10 +15,6 @@ export class DateFieldComponent extends FieldBaseComponent {
 
   date!: DateTime;
   formControlEnd!: FormControl;
-
-  constructor(injector: Injector) {
-    super(injector);
-  }
 
   override afterInit() {
     if (this.controlEndName) {

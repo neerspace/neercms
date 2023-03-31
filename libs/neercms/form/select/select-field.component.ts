@@ -1,12 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Injector,
-  Input,
-  OnChanges,
-  Output,
-  SimpleChange,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChange } from '@angular/core';
 import { ISelectOption } from 'neercms/form/types';
 import { FieldBaseComponent, FormBaseChanges } from '../field-base.component';
 
@@ -27,10 +19,6 @@ export class SelectFieldComponent extends FieldBaseComponent implements OnChange
   @Input() selected!: ISelectOption;
 
   @Output() selectedChange: EventEmitter<ISelectOption> = new EventEmitter();
-
-  constructor(injector: Injector) {
-    super(injector);
-  }
 
   override ngOnChanges(changes: SelectFieldChanges) {
     super.ngOnChanges(changes);
@@ -53,7 +41,7 @@ export class SelectFieldComponent extends FieldBaseComponent implements OnChange
       this.getOptionByFormValue();
     }
 
-    this.formControl.valueChanges.subscribe(v => {
+    this.formControl?.valueChanges.subscribe(v => {
       this.getOptionByFormValue();
     });
   }
@@ -61,7 +49,7 @@ export class SelectFieldComponent extends FieldBaseComponent implements OnChange
   onOptionSelect(option: ISelectOption) {
     this.selected = option;
     this.selectedChange.emit(option);
-    this.formControl.setValue(option.key);
+    this.formControl?.setValue(option.key);
     option.onSelected?.(option);
   }
 

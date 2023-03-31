@@ -1,29 +1,27 @@
-<nc-main-header pageTitle="Articles">
-  <button ncButton
-          icon="la-filter"
-          variant="secondary"
-          [disabled]="hideTable || table.loading"
-          (click)="showFilters = !showFilters"></button>
-  <button ncButton
-          icon="la-sync"
-          variant="primary"
-          [disabled]="hideTable || table.loading"
-          (click)="table.loadData()">
-    Refresh
-  </button>
-  <!--<button ncButton-->
-  <!--        icon="la-download"-->
-  <!--        variant="primary"-->
-  <!--        [disabled]="table.loading"-->
-  <!--        (click)="downloadJson()">-->
-  <!--  JSON-->
-  <!--</button>-->
-</nc-main-header>
-
 <nc-main-content>
-
   <nc-split storageKey="articles">
     <div *ncSplitOne>
+      <nc-main-header pageTitle="Articles">
+        <button ncButton
+                icon="la-filter"
+                variant="secondary"
+                [disabled]="hideTable || table.loading"
+                (click)="showFilters = !showFilters"></button>
+        <button ncButton
+                icon="la-sync"
+                variant="primary"
+                [disabled]="hideTable || table.loading"
+                (click)="table.loadData()">
+          Refresh
+        </button>
+        <!--<button ncButton-->
+        <!--        icon="la-download"-->
+        <!--        variant="primary"-->
+        <!--        [disabled]="table.loading"-->
+        <!--        (click)="downloadJson()">-->
+        <!--  JSON-->
+        <!--</button>-->
+      </nc-main-header>
       <nc-data-table #table
                      *ngIf="!hideTable"
                      defaultSorting="-id"

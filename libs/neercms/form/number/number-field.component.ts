@@ -1,6 +1,7 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NumberPattern } from 'neercms/form/types';
 import { NumberInputProcessorService } from 'neercms/services';
+import { BoolInput } from 'neercms/shared/types';
 import { FieldBaseComponent } from '../field-base.component';
 
 @Component({
@@ -12,14 +13,12 @@ export class NumberFieldComponent extends FieldBaseComponent {
   @Input() format: NumberPattern = 'integer';
   @Input() minValue: number = -Infinity;
   @Input() maxValue: number = Infinity;
+  @Input() allowCopy: BoolInput = false;
 
   mask!: string;
 
-  constructor(
-    injector: Injector,
-    private readonly numberInputProcessor: NumberInputProcessorService,
-  ) {
-    super(injector);
+  constructor(private readonly numberInputProcessor: NumberInputProcessorService) {
+    super();
   }
 
   override afterInit() {

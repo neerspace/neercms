@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { NeerStorageService } from 'neercms/services/storage';
 import { ColumnInfo, ColumnsChanges } from 'neercms/table/types';
 
@@ -7,7 +7,7 @@ import { ColumnInfo, ColumnsChanges } from 'neercms/table/types';
   templateUrl: './column-chooser.component.html',
   styleUrls: ['./column-chooser.component.scss'],
 })
-export class ColumnChooserComponent implements OnChanges {
+export class ColumnChooserComponent implements OnInit, OnChanges {
   @Input() columns!: ColumnInfo[];
   @Input() sequenceName!: string;
   @Input() sequence: string[] = [];
@@ -19,8 +19,13 @@ export class ColumnChooserComponent implements OnChanges {
 
   constructor(private storage: NeerStorageService) {}
 
+  ngOnInit() {
+    console.log('cols on init:', this.columns);
+  }
+
   ngOnChanges(changes: ColumnsChanges): void {
     if (changes.columns) {
+      console.log('cols on change:', this.columns);
       this.updateChooserOptions();
     }
   }

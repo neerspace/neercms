@@ -1,3 +1,7 @@
+:host {
+  display: block;
+}
+
 .form-grp {
   position: relative;
 }
@@ -15,7 +19,7 @@ label {
 }
 
 input, textarea, .dropdown-button {
-  border-color: var(--input-border-color) !important;
+  //border-color: var(--input-border-color) !important;
   color: var(--input-color);
   background-color: var(--input-bg);
 
@@ -60,4 +64,9 @@ input, textarea, .dropdown-button {
 
 .col-form-label {
   max-width: 180px;
+}
+
+.link-input {
+  text-decoration: underline;
+  font-weight: bolder;
 }

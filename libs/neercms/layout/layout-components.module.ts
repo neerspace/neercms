@@ -6,6 +6,7 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { SidebarNavItemComponent } from './sidebar-nav/sidebar-nav-item.component';
 import { SidebarNavigationComponent } from './sidebar-nav/sidebar-navigation.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarNavItemComponent,
     MainHeaderComponent,
     MainContentComponent,
+    AdminLayoutComponent,
   ],
   exports: [
     // Shared components
     SidebarComponent,
     MainHeaderComponent,
     MainContentComponent,
+    AdminLayoutComponent,
   ],
   imports: [
     // Angular Core

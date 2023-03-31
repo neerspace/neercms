@@ -67,7 +67,7 @@ $escaped-characters: (
     (")", "%29"),
 );
 
-@import 'bootstrap/scss/functions';
+@import "bootstrap/scss/functions";
 
 // Options
 // Quickly modify global styling by enabling or disabling optional features.
@@ -82,7 +82,7 @@ $enable-validation-icons: true;
 $enable-negative-margins: false;
 
 // Prefix for :root CSS variables
-$variable-prefix: '';
+$variable-prefix: "";
 $prefix: $variable-prefix;
 
 // Body
@@ -116,8 +116,8 @@ $component-active-bg: $primary;
 // Font, line-height, and color for body text, headings, and more.
 
 // font-variables
-$font-family-sans-serif: Ubuntu, Roboto, system-ui, -apple-system, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-$font-family-monospace: 'Ubuntu Mono', Consolas, monospace;
+$font-family-sans-serif: Ubuntu, Roboto, system-ui, -apple-system, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: "Ubuntu Mono", Consolas, monospace;
 
 
 // Reset border radius
@@ -194,11 +194,15 @@ $table-hover-bg: var(--gray-600);
 
 // Form
 $input-bg: var(--gray-600);
-$input-border-color: var(--primary);
+$input-border-color: $gray-500;
 $input-border-width: 1.5px;
 $input-disabled-bg: var(--gray-500);
 $input-btn-focus-color: var(--primary);
 $input-btn-focus-width: 1.5px;
+
+$form-check-input-width: 1.25em;
+$form-check-input-height: 1.25em;
+$form-check-input-checked-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$white}' stroke-width='2.5' d='m4 9 4.5 4.5 8-8'/></svg>");
 
 // Toast
 $toast-spacing: .5rem;

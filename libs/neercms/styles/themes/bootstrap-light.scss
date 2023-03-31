@@ -66,6 +66,7 @@ $modal-header-border-color: $white;
 $toast-color: $white;
 $input-focus-bg: $gray-900;
 $input-disabled-bg: $gray-600;
+$input-border-color: $gray-500;
 
 $tooltip-bg: $gray-100;
 $tooltip-color: $white;
@@ -137,7 +138,6 @@ nc-tabs {
 form {
   --input-bg: #{$gray-900};
   --input-color: #{$black};
-  --input-border-color: #{$gray-500};
   --input-disabled-bg: #{$input-disabled-bg};
 }
 

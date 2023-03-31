@@ -26,18 +26,32 @@
         [formGroup]="articleService.form"
         [ready]="articleService.ready">
 
+    <nc-fieldset [row]="true">
+      <nc-checkbox-field label="Checked"
+                         controlName="id"
+                         [disabled]="locked"></nc-checkbox-field>
+      <nc-checkbox-field controlName="id"
+                         [disabled]="locked"></nc-checkbox-field>
+    </nc-fieldset>
     <nc-fieldset size="small">
+      <nc-link-field label="Link"
+                     controlName="languageCode"
+                     linkControlName="linkSample"></nc-link-field>
+      <nc-action-field label="Action"
+                       controlName="languageCode"
+                       (action)="locked = true"></nc-action-field>
+      <!--controlName="id"-->
       <nc-number-field label="ID"
                        controlName="id"
                        [disabled]="locked"
                        [required]="true"
                        [allowCopy]="true"></nc-number-field>
-      <nc-text-field label="Language Code"
-                     controlName="languageCode"
-                     [disabled]="locked"
-                     [allowCopy]="true"
-                     [required]="true"
-                     [maxLength]="2"></nc-text-field>
+      <!--<nc-text-field label="Language Code"-->
+      <!--               controlName="languageCode"-->
+      <!--               [disabled]="locked"-->
+      <!--               [allowCopy]="true"-->
+      <!--               [required]="true"-->
+      <!--               [maxLength]="2"></nc-text-field>-->
       <nc-date-field label="Created At"
                      controlName="created"
                      format="date-range"
@@ -45,7 +59,17 @@
 
     </nc-fieldset>
     <hr/>
-    <nc-fieldset size="small">
+    <nc-fieldset size="large" [row]="true">
+
+      <nc-text-field label="Views/Rating"
+                     controlName="views"
+                     [disabled]="locked"></nc-text-field>
+      <nc-text-field
+        controlName="rate"
+        [disabled]="locked"></nc-text-field>
+    </nc-fieldset>
+    <hr/>
+    <nc-fieldset size="large" [row]="true">
 
       <nc-text-field label="Views"
                      controlName="views"
@@ -53,12 +77,13 @@
       <nc-text-field label="Rating"
                      controlName="rate"
                      [disabled]="locked"></nc-text-field>
-      <nc-select-field label="Select sample"
-                       controlName="selectValue"
-                       [options]="options"
-                       [disabled]="locked">
-      </nc-select-field>
     </nc-fieldset>
+    <nc-select-field label="Select sample"
+                     controlName="selectValue"
+                     [controlUnlink]="true"
+                     [options]="options"
+                     [disabled]="locked">
+    </nc-select-field>
     <hr/>
     <nc-fieldset size="large">
       <nc-text-area-field label="Title"

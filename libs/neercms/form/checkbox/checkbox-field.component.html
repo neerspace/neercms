@@ -1,1 +1,24 @@
-<p>checkbox works!</p>
+<div class="row mb-3 form-grp">
+  <label *ngIf="label"
+         [for]="controlName"
+         class="col-sm-4 col-form-label">
+    {{label}}
+    <sup *ngIf="required"
+         class="required-mark">*
+    </sup>
+  </label>
+  <div class="col-sm-8 checkbox-container">
+    <input #input
+           [formControl]="formControl"
+           [id]="controlName"
+           type="checkbox"
+           class="form-check-input"
+           (input)="onChange($event)"
+           (focusin)="focused = true"
+           (focusout)="focused = false" />
+  </div>
+
+  <nc-field-message [text]="formControl.getError('api-error')"
+                    [show]="formControl.hasError('api-error')"
+                    [error]="true"></nc-field-message>
+</div>

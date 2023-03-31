@@ -1,15 +1,11 @@
 import { color } from 'neercms/shared/types';
 
-export type InputType =
-  | 'text'
-  | 'password'
-  | 'email'
-  | 'phone'
-  | 'number'
-  | 'date'
-  | 'time'
-  | 'datetime'
-  | 'month';
+export type InputType = 'text' | 'password' | 'email' | 'phone';
+// | 'number'
+// | 'date'
+// | 'time'
+// | 'datetime'
+// | 'month';
 
 export type Size = 'small' | 'medium' | 'large';
 

@@ -12,6 +12,7 @@ export const items: MenuItems = [
     icon: 'la-star',
     children: [
       {
+        hidden: true,
         routerLink: '/users',
         text: 'Users',
         icon: 'la-user-friends',
@@ -35,8 +36,8 @@ export const items: MenuItems = [
     text: 'System',
     icon: 'la-tools',
     children: [
-      { routerLink: '/roles', text: 'Roles', icon: 'la-key' },
-      { routerLink: '/languages', text: 'Languages', icon: 'la-globe-africa' },
+      { hidden: true, routerLink: '/roles', text: 'Roles', icon: 'la-key' },
+      { hidden: true, routerLink: '/languages', text: 'Languages', icon: 'la-globe-africa' },
     ],
   },
 ];

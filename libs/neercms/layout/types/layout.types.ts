@@ -12,6 +12,7 @@ export interface IMenuItem {
   icon?: string;
   iconKind?: string;
   image?: string;
+  hidden?: boolean;
   indicator?: IMenuIndicator;
   collapseByDefault?: boolean;
   routerLink?: string;

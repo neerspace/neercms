@@ -8,4 +8,5 @@ import { Size } from 'neercms/form/types';
 })
 export class FieldsetComponent {
   @HostBinding('attr.size') @Input() size: Size = 'small';
+  @HostBinding('class.fields-row') @Input() row: boolean = false;
 }

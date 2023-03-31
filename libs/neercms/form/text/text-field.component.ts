@@ -1,4 +1,4 @@
-import { Component, Injector, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { InputType } from 'neercms/form/types';
 import { BoolInput } from 'neercms/shared/types';
@@ -13,10 +13,7 @@ export class TextFieldComponent extends FieldBaseComponent {
   @Input() type: InputType = 'text';
   @Input() maxLength: number = -1;
   @Input() autocomplete: BoolInput = false;
-
-  constructor(injector: Injector) {
-    super(injector);
-  }
+  @Input() allowCopy: BoolInput = false;
 
   override afterInit() {
     if (this.maxLength > 0) {

@@ -1,0 +1,20 @@
+<div class="row mb-3 form-grp">
+  <label *ngIf="label"
+         [for]="controlName"
+         class="col-sm-4 col-form-label">
+    {{label}}
+    <sup *ngIf="required"
+         class="required-mark">*
+    </sup>
+  </label>
+  <div class="col-sm-8 position-relative">
+    <input [formControl]="formControl"
+           type="text"
+           class="form-control right-padding link-input"
+           (focusin)="focused = true"
+           (focusout)="focused = false"/>
+    <button class="input-mark" (click)="action.emit()">
+      <i class="las {{icon}}"></i>
+    </button>
+  </div>
+</div>

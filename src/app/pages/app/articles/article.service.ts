@@ -17,7 +17,8 @@ export class ArticleService extends FormServiceBase {
       created: ['', []],
       views: ['', []],
       rate: ['', []],
-      selectValue: ['', []],
+      linkSample: ['https://google.com/'],
+      // selectValue: ['', []],
     });
   }
 
@@ -64,7 +65,10 @@ export class ArticleService extends FormServiceBase {
           views: 1300,
           created: '2023-03-01T12:34:00',
         },
-      ],
+      ].map(x => ({
+        ...x,
+        linkSample: 'articles', //'https://google.com/' + x.languageCode,
+      })),
       total: 121,
     });
   }

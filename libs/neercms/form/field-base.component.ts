@@ -1,6 +1,6 @@
 import {
   Component,
-  Injector,
+  inject,
   Input,
   OnChanges,
   OnInit,
@@ -25,25 +25,25 @@ export abstract class FieldBaseComponent implements OnInit, OnChanges {
   @Input() controlUnlink: BoolInput = false;
   @Input() required: BoolInput = false;
   @Input() disabled: BoolInput = false;
-  @Input() allowCopy: BoolInput = false;
 
   errors = errorMessages;
   formControl!: FormControl;
   changed: boolean = false;
   focused: boolean = false;
 
-  public readonly copyPaste: CopyPasteService;
-  public readonly formGroup: FormGroupDirective;
-
-  protected constructor(injector: Injector) {
-    this.copyPaste = injector.get(CopyPasteService);
-    this.formGroup = injector.get(FormGroupDirective);
-  }
+  public readonly copyPaste = inject(CopyPasteService);
+  public readonly formGroup = inject(FormGroupDirective);
 
   ngOnInit(): void {
     // this.formGroup.form.error
     if (this.isTrue(this.controlUnlink)) {
       return;
+    }
+    if (!this.controlName) {
+      throw new FormError(
+        "A correct form control mast be linked to the field using 'controlName' property" +
+          "If you want to left it unlinked, the 'controlUnlink' mast be explicitly set true",
+      );
     }
 
     this.formControl ??= this.formGroup.form.get(this.controlName) as FormControl;
@@ -61,16 +61,16 @@ export abstract class FieldBaseComponent implements OnInit, OnChanges {
       } else {
         this.formControl.enable({ onlySelf: true });
       }
-    });
+    }, 1);
     this.afterInit();
   }
 
   ngOnChanges(changes: FormBaseChanges): void {
     if (changes.disabled && this.formControl) {
       if (this.isTrue(this.disabled)) {
-        this.formControl.disable({ onlySelf: true });
+        this.formControl.disable();
       } else {
-        this.formControl.enable({ onlySelf: true });
+        this.formControl.enable();
       }
     }
   }

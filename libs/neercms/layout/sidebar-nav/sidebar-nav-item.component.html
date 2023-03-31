@@ -13,7 +13,8 @@
       attr.aria-labelledby="navgrp-{{getKey(item.text)}}">
       <div class="accordion-body">
         <ng-container *ngFor="let subItem of item.children">
-          <a [routerLink]="subItem.routerLink"
+          <a *ngIf="!subItem.hidden"
+             [routerLink]="subItem.routerLink"
              [queryParams]="subItem.routerParams"
              [state]="subItem.stateData"
              routerLinkActive="active"
@@ -40,7 +41,8 @@
 </ng-container>
 
 <ng-template #navLinkItem>
-  <a [routerLink]="item.routerLink"
+  <a *ngIf="!item.hidden"
+     [routerLink]="item.routerLink"
      [queryParams]="item.routerParams"
      [state]="item.stateData"
      routerLinkActive="active"
