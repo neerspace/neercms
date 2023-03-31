@@ -1,17 +1,17 @@
 $dark-mode: true;
 
-@import './shared';
+@import "./shared";
 
 // Grayscale colors
 $white: #fff;
-$gray-100: #D8D8D6;
+$gray-100: #d8d8d6;
 $gray-200: #a0a1a2;
 $gray-300: #7b7b80;
 $gray-400: #565657;
 $gray-500: #464648;
 $gray-600: #3e3f44;
 $gray-700: #2c2e31;
-$gray-800: #1F2023;
+$gray-800: #1f2023;
 $gray-900: #1a1c1e;
 $black: #000;
 
@@ -64,14 +64,15 @@ $modal-content-bg: $gray-700;
 //$modal-header-border-color: $white;
 
 $toast-color: $white;
+$input-border-color: $gray-300;
 $input-focus-bg: $gray-600;
-$input-disabled-bg: $gray-500;
-$input-border-color: $gray-500;
+$input-disabled-bg: $gray-600;
+$input-disabled-border-color: $gray-600;
 
 $tooltip-bg: $gray-500;
 $tooltip-color: $white;
 
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
 
 
 :root {
@@ -138,7 +139,10 @@ nc-tabs {
 form {
   --input-bg: #{$gray-600};
   --input-color: #{$white};
+  --input-border-color: #{$input-border-color};
   --input-disabled-bg: #{$input-disabled-bg};
+  --input-disabled-border-color: #{$input-disabled-border-color};
+  --input-focus-border-color: #{$input-focus-border-color};
 }
 
 .flatpickr-calendar {

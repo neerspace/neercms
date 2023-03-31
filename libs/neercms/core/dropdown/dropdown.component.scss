@@ -1,4 +1,4 @@
-@import '../../styles/mixins';
+@import "../../styles/mixins";
 
 .dropdown-menu {
   padding: 0;
@@ -27,7 +27,7 @@
   }
 
   &:after {
-    content: '';
+    content: "";
     display: inline-block;
     width: 1rem;
     height: 100%;
@@ -81,9 +81,15 @@
     font-weight: lighter;
     //border: none;
 
+    &:focus {
+      border-color: var(--input-focus-border-color);
+      box-shadow: 0 0 0 1.5px var(--primary);
+    }
+
     &.disabled {
       color: var(--input-color);
       background-color: var(--input-disabled-bg);
+      border-color: var(--input-disabled-border-color);
       opacity: 100%;
     }
   }
