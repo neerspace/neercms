@@ -1,3 +1,4 @@
+export * from './admin-layout/admin-layout.component';
 export * from './main-content/main-content.component';
 export * from './main-header/main-header.component';
 export * from './sidebar/sidebar.component';

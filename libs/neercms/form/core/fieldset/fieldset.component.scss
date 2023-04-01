@@ -1,4 +1,6 @@
 :host {
+  display: block;
+
   &[size="small"] {
     max-width: 520px;
   }

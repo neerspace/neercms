@@ -3,5 +3,5 @@
   <ng-content></ng-content>
   <ng-container *ngIf="template"
                 [ngTemplateOutlet]="template"
-                [ngTemplateOutletContext]="{$implicit: data}"></ng-container>
+                [ngTemplateOutletContext]="{$implicit: data, context: context}"></ng-container>
 </div>

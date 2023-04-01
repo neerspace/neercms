@@ -9,8 +9,7 @@ import {
 } from '@angular/core';
 import { TabTemplateDirective } from '../tab-template.directive';
 import { TabComponent } from '../tab/tab.component';
-
-export type TabKey = string | number;
+import { TabKey } from '../types';
 
 @Component({
   selector: 'nc-tabs',
@@ -37,6 +36,10 @@ export class TabsComponent implements AfterContentInit {
         this.openedTabKeys.push(tab.key);
       }
     }
+  }
+
+  get activeTab(): TabComponent | undefined {
+    return this.tabs.find(tab => tab.active) ?? this.dynamicTabs.find(tab => tab.active);
   }
 
   selectTab(tab: TabComponent) {
@@ -74,6 +77,7 @@ export class TabsComponent implements AfterContentInit {
     instance.data = data;
     instance.isCloseable = isCloseable;
     instance.active = true;
+    instance.tabs = this;
 
     this.dynamicTabs.push(componentRef.instance as TabComponent);
     this.openedTabKeys.push(key);
