@@ -85,7 +85,8 @@ select:-webkit-autofill {
 }
 
 .split-area-content {
-  overflow: hidden !important;
+  //overflow: hidden !important;
+  height: 100%;
 }
 
 textarea {

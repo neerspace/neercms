@@ -5,7 +5,7 @@
       class="menu-item form-check dropdown-item{{!col.hideable ? ' inactive' : ''}}"
       (click)="$event.stopPropagation()">
     <label class="form-check-label">
-      <input class="form-check-input"
+      <input class="form-check-input column-chooser-check"
              type="checkbox"
              [disabled]="!col.hideable"
              [checked]="!col.hidden"
